@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha's Cleaning – Leistungen</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#ffffff; color:#333; }
+    h1, h2, h3 { color:#1E8F6F; }
+    .section { padding:80px 20px; max-width:1100px; margin:0 auto; }
+    @media (max-width:768px) { .section { padding:50px 15px; } }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header style="width:100%; background:#ffffff; border-bottom:1px solid #e5e5e5;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:10px 20px;">
+
+    <!-- Logo -->
+    <img src="/logo-header.png" alt="Alpha's Cleaning Logo" style="height:80px; width:auto;">
+
+    <!-- Navigation -->
+    <nav style="display:flex; gap:25px; font-size:18px;">
+      <a href="/de/index.html" style="text-decoration:none; color:#333;">Startseite</a>
+      <a href="/de/services.html" style="text-decoration:none; color:#1E8F6F; font-weight:bold;">Leistungen</a>
+      <a href="/de/contact.html" style="text-decoration:none; color:#333;">Kontakt</a>
+    </nav>
+
+    <!-- Right Side -->
+    <div style="display:flex; align-items:center; gap:20px;">
+      <div style="display:flex; gap:10px; font-size:22px;">
+        <a href="/services.html">🇬🇧</a>
+        <a href="/de/services.html">🇩🇪</a>
+      </div>
+      <div id="clock" style="font-size:18px; font-weight:bold;"></div>
+      <div id="greeting" style="font-size:18px; font-weight:bold;"></div>
+      <div id="weather" style="font-size:18px; font-weight:bold;"></div>
+    </div>
+
+  </div>
+</header>
+
+<!-- SERVICES SECTION -->
+<section class="section">
+  <h1 style="text-align:center; margin-bottom:40px;">Unsere Reinigungsleistungen</h1>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px;">
+
+    <div style="background:#f5f5f5; padding:25px; border-radius:8px; border:1px solid #ddd;">
+      <h2>Ferienwohnung Reinigung</h2>
+      <p>Komplettservice inklusive Wäsche, Betten, Auffüllen und Gästevorbereitung.</p>
+    </div>
+
+    <div style="background:#f5f5f5; padding:25px; border-radius:8px; border:1px solid #ddd;">
+      <h2>Haushaltsreinigung</h2>
+      <p>Regelmäßige Reinigung für Küche, Bad, Böden, Staubwischen und allgemeine Hauspflege.</p>
+    </div>
+
+    <div style="background:#f5f5f5; padding:25px; border-radius:8px; border:1px solid #ddd;">
+      <h2>Tiefenreinigung</h2>
+      <p>Intensive Reinigung inklusive Geräte, Fenster, Ecken und schwer erreichbare Bereiche.</p>
+    </div>
+
+    <div style="background:#f5f5f5; padding:25px; border-radius:8px; border:1px solid:#ddd;">
+      <h2>Büro & Gewerbe Reinigung</h2>
+      <p>Professionelle Reinigung für Büros, Geschäfte und gewerbliche Räume.</p>
+    </div>
+
+    <div style="background:#f5f5f5; padding:25px; border-radius:8px; border:1px solid:#ddd;">
+      <h2>Einzugs- / Auszugsreinigung</h2>
+      <p>Komplette Objektreinigung für Mieter, Vermieter und Hausverwaltungen.</p>
+    </div>
+
+    <div style="background:#f5f5f5; padding:25px; border-radius:8px; border:1px solid:#ddd;">
+      <h2>Individuelle Reinigungspakete</h2>
+      <p>Maßgeschneiderte Reinigungslösungen nach Deinen Bedürfnissen und Deinem Zeitplan.</p>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; margin-top:50px;">
+    <a href="/de/contact.html" style="padding:15px 35px; background:#1E8F6F; color:white; text-decoration:none; border-radius:6px; font-size:20px;">Angebot anfragen</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="width:100%; background:#1E8F6F; color:white; padding:40px 20px; text-align:center;">
+  <h3>Alpha's Cleaning</h3>
+  <p>Gesundheit ist Reichtum</p>
+  <p>Email: alphascleaning21@outlook.com</p>
+  <p>Telefon: +49 176 82131743</p>
+  <p>Kempten, Deutschland</p>
+  <hr style="border:0; border-top:1px solid rgba(255,255,255,0.3); margin:25px auto; width:60%;">
+  <p style="font-size:14px; opacity:0.8;">© 2026 Alpha's Cleaning — Alle Rechte vorbehalten</p>
+</footer>
+
+<!-- CLOCK SCRIPT -->
+<script>
+function updateClock() {
+  const now = new Date();
+  document.getElementById('clock').textContent =
+    now.toLocaleTimeString('de-DE', { hour12:false });
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+<!-- GREETING SCRIPT -->
+<script>
+function updateGreeting() {
+  const hour = new Date().getHours();
+  let greeting = hour < 12 ? "Guten Morgen, Alpha!" :
+                 hour < 18 ? "Guten Nachmittag, Alpha!" :
+                             "Guten Abend, Alpha!";
+  document.getElementById('greeting').textContent = greeting;
+}
+updateGreeting();
+</script>
+
+<!-- WEATHER SCRIPT -->
+<script>
+async function updateWeather() {
+  const url = "https://api.open-meteo.com/v1/forecast?latitude=47.7267&longitude=10.3139&current_weather=true";
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    const temp = Math.round(data.current_weather.temperature);
+    const icons = {0:"☀️",1:"🌤️",2:"⛅",3:"☁️",45:"🌫️",48:"🌫️",51:"🌦️",61:"🌧️",71:"❄️",95:"⛈️"};
+    const icon = icons[data.current_weather.weathercode] || "🌡️";
+    document.getElementById("weather").textContent = `${icon} ${temp}°C`;
+  } catch {
+    document.getElementById("weather").textContent = "Wetter nicht verfügbar";
+  }
+}
+updateWeather();
+setInterval(updateWeather, 900000);
+</script>
+
+</body>
+</html>
