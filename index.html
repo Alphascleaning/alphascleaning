@@ -1,257 +1,282 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alphas Cleaning – Professionelle Reinigung in Kempten</title>
-
+  <title>Alpha's Cleaning – Professional Cleaning Services</title>
   <style>
-    :root {
-      --primary: #1e8f6f;
-      --accent: #4bb8a9;
-      --dark: #1a1a1a;
-      --light: #f5f5f5;
-      --white: #ffffff;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-
-    /* HEADER */
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: var(--white);
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-text {
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .nav-links a {
-      color: var(--white);
-      text-decoration: none;
-      margin-left: 15px;
-      font-size: 14px;
-    }
-
-    .nav-links a:hover {
-      text-decoration: underline;
-    }
-
-    header h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 18px;
-      margin-bottom: 25px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      margin: 5px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      border: 2px solid var(--white);
-    }
-
-    .btn-primary {
-      background: var(--white);
-      color: var(--primary);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--white);
-    }
-
-    /* SECTIONS */
-    .section {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .section h2 {
-      color: var(--primary);
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--white);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: var(--primary);
-    }
-
-    /* CONTACT */
-    .contact-box {
-      background: var(--white);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--dark);
-      color: var(--white);
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-      margin: 0 5px;
-    }
+    body { margin:0; font-family:Arial, sans-serif; background:#ffffff; color:#333; }
+    h1, h2, h3 { color:#1E8F6F; }
+    .section { padding:80px 20px; max-width:1100px; margin:0 auto; }
+    @media (max-width:768px) { .section { padding:50px 15px; } }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
-    <div class="logo-wrap">
-      <img src="logo.png" alt="Alphas Cleaning Logo" style="height:60px; border-radius:8px;">
-      <div>
-        <div class="brand-text">Alphas Cleaning</div>
-        <div style="font-size:11px; opacity:0.9;">Health is Wealth</div>
+<!-- HEADER WITH FLAG SWITCHER + CLOCK + GREETING + WEATHER -->
+<header style="width:100%; background:#ffffff; border-bottom:1px solid #e5e5e5;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:10px 20px;">
+
+    <!-- Logo -->
+    <img src="/logo-header.png" alt="Alpha's Cleaning Logo" style="height:80px; width:auto;">
+
+    <!-- Navigation -->
+    <nav style="display:flex; gap:25px; font-size:18px;">
+      <a href="/index.html" style="text-decoration:none; color:#1E8F6F; font-weight:bold;">Home</a>
+      <a href="/services.html" style="text-decoration:none; color:#333;">Services</a>
+      <a href="/contact.html" style="text-decoration:none; color:#333;">Contact</a>
+    </nav>
+
+    <!-- Right Side Tools -->
+    <div style="display:flex; align-items:center; gap:20px;">
+
+      <!-- Language Switcher -->
+      <div style="display:flex; gap:10px; font-size:22px;">
+        <a href="/index.html" style="text-decoration:none;">🇬🇧</a>
+        <a href="/de/index.html" style="text-decoration:none;">🇩🇪</a>
       </div>
+
+      <!-- Clock -->
+      <div id="clock" style="font-size:18px; font-weight:bold; color:#333;"></div>
+
+      <!-- Greeting -->
+      <div id="greeting" style="font-size:18px; font-weight:bold; color:#333;"></div>
+
+      <!-- Weather -->
+      <div id="weather" style="font-size:18px; font-weight:bold; color:#333;"></div>
+
     </div>
-    <div class="nav-links">
-      <a href="#ueber-uns">Über uns</a>
-      <a href="#leistungen">Leistungen</a>
-      <a href="#preise">Preise</a>
-      <a href="#kontakt">Kontakt</a>
-    </div>
+
   </div>
-
-  <h1>Professionelle Reinigungsservices in Kempten & Umgebung</h1>
-  <p>Zuverlässig. Gründlich. Schnell.</p>
-
-  <a href="#kontakt" class="btn btn-primary">Reinigung buchen</a>
-  <a href="#preise" class="btn btn-secondary">Kostenloses Angebot</a>
 </header>
 
-<section class="section" id="ueber-uns">
-  <h2>Über uns</h2>
-  <p>
-    Alphas Cleaning ist ein zuverlässiger Reinigungsservice aus Kempten, spezialisiert auf private Haushalte,
-    Ferienwohnungen und gewerbliche Objekte. Wir stehen für hohe Qualität, flexible Termine und gründliche Arbeit.
+<!-- HERO -->
+<section id="home" style="width:100%; background:#f5f5f5; padding:80px 20px; text-align:center;">
+  <h1 style="font-size:48px; margin-bottom:20px;">Welcome to Alpha's Cleaning</h1>
+  <p style="font-size:22px; max-width:700px; margin:0 auto;">
+    Reliable, professional and detail‑oriented cleaning services in Kempten and surrounding areas.
   </p>
-
-  <ul>
-    <li>Professionelles & erfahrenes Team</li>
-    <li>Umweltfreundliche Reinigungsmittel</li>
-    <li>Flexible Terminvereinbarung</li>
-    <li>Vollständig versichert</li>
-  </ul>
+  <a href="/contact.html" style="display:inline-block; margin-top:30px; padding:15px 35px; background:#1E8F6F; color:#fff; text-decoration:none; font-size:20px; border-radius:6px;">Book a Cleaning</a>
 </section>
 
-<section class="section" id="leistungen">
-  <h2>Unsere Dienstleistungen</h2>
-
-  <div class="cards">
-    <div class="card">
-      <h3>Ferienwohnungsreinigung</h3>
-      <p>Schnelle und zuverlässige Reinigung für Gastgeber – inklusive Wäsche & Gästevorbereitung.</p>
-    </div>
-
-    <div class="card">
-      <h3>Grundreinigung</h3>
-      <p>Regelmäßige Reinigung für ein frisches Zuhause.</p>
-    </div>
-
-    <div class="card">
-      <h3>Tiefenreinigung</h3>
-      <p>Gründliche Reinigung von oben bis unten – perfekt für Frühjahrsputz.</p>
-    </div>
-
-    <div class="card">
-      <h3>Büroreinigung</h3>
-      <p>Saubere Arbeitsplätze für produktive Teams.</p>
-    </div>
-
-    <div class="card">
-      <h3>Einzugs- & Auszugsreinigung</h3>
-      <p>Perfekte Übergabe für Mieter & Vermieter.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="preise">
-  <h2>Preise</h2>
-
-  <div class="cards">
-    <div class="card"><strong>Grundreinigung:</strong> ab 29 €/Stunde</div>
-    <div class="card"><strong>Tiefenreinigung:</strong> ab 39 €/Stunde</div>
-    <div class="card"><strong>Ferienwohnung:</strong> Festpreis je nach Größe</div>
-    <div class="card"><strong>Büroreinigung:</strong> Individuelles Angebot</div>
-  </div>
-
-  <br>
-  <a href="#kontakt" class="btn btn-primary">Exaktes Angebot anfordern</a>
-</section>
-
-<section class="section" id="kontakt">
-  <h2>Kontakt</h2>
-
-  <div class="contact-box">
-    <p><strong>Telefon:</strong> <a href="tel:+4917682131743">+49 176 82131743</a></p>
-    <p><strong>E-Mail:</strong> <a href="mailto:alphascleaning21@outlook.com">alphascleaning21@outlook.com</a></p>
-    <p><strong>WhatsApp:</strong> <a href="https://wa.me/4917682131743" target="_blank">Nachricht senden</a></p>
-    <p><strong>Einsatzgebiet:</strong> Kempten & Umgebung</p>
-  </div>
-</section>
-
-<footer>
-  <p>Alphas Cleaning – Professionelle Reinigungsservices in Kempten</p>
-  <p>
-    <a href="#">Impressum</a> •
-    <a href="#">Datenschutz</a> •
-    <a href="#">AGB</a>
+<!-- ABOUT -->
+<section class="section">
+  <h2 style="text-align:center; margin-bottom:30px;">About Us</h2>
+  <p style="font-size:20px; line-height:1.6;">
+    Alpha's Cleaning provides high‑quality cleaning services for homes, holiday apartments, and businesses.
+    We focus on reliability, professionalism, and attention to detail — ensuring every client is satisfied.
   </p>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="section" style="background:#f5f5f5;">
+  <h2 style="text-align:center; margin-bottom:40px;">Our Services</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:30px;">
+    <div style="background:white; padding:25px; border-radius:8px; border:1px solid #ddd;">
+      <h3>Holiday Apartment Cleaning</h3>
+      <p>Turnover cleaning, laundry, restocking and guest preparation.</p>
+    </div>
+    <div style="background:white; padding:25px; border-radius:8px; border:1px solid #ddd;">
+      <h3>Basic Home Cleaning</h3>
+      <p>Floors, bathrooms, kitchens, dusting and general home care.</p>
+    </div>
+    <div style="background:white; padding:25px; border-radius:8px; border:1px solid #ddd;">
+      <h3>Deep Cleaning</h3>
+      <p>Full sanitation, appliances, windows and hard‑to‑reach areas.</p>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:40px;">
+    <a href="/services.html" style="padding:12px 30px; background:#1E8F6F; color:white; text-decoration:none; border-radius:6px; font-size:18px;">View All Services</a>
+  </div>
+</section>
+
+<!-- CONTACT PREVIEW -->
+<section class="section" style="text-align:center;">
+  <h2>Contact Us</h2>
+  <p style="font-size:20px;">Email: alphascleaning21@outlook.com</p>
+  <p style="font-size:20px;">Phone: +49 176 82131743</p>
+  <a href="/contact.html" style="padding:12px 30px; background:#1E8F6F; color:white; text-decoration:none; border-radius:6px; font-size:18px;">Send a Message</a>
+</section>
+
+<!-- FOOTER -->
+<footer style="width:100%; background:#1E8F6F; color:white; padding:40px 20px; text-align:center;">
+  <h3 style="margin-bottom:15px;">Alpha's Cleaning</h3>
+  <p>Health is Wealth</p>
+  <p>Email: alphascleaning21@outlook.com</p>
+  <p>Phone: +49 176 82131743</p>
+  <p>Kempten, Germany</p>
+  <hr style="border:0; border-top:1px solid rgba(255,255,255,0.3); margin:25px auto; width:60%;">
+  <p style="font-size:14px; opacity:0.8;">© 2026 Alpha's Cleaning — All Rights Reserved</p>
 </footer>
+
+<!-- FLOATING CONTACT BUTTONS -->
+<div style="
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  z-index:9999;
+">
+
+  <!-- Call Now -->
+  <a href="tel:+4917682131743" style="
+    background:#28A745;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    text-decoration:none;
+    font-size:28px;
+    color:white;
+  ">📞</a>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/4917682131743" target="_blank" style="
+    background:#25D366;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    text-decoration:none;
+    font-size:28px;
+    color:white;
+  ">💬</a>
+
+  <!-- Facebook -->
+  <a href="https://facebook.com" target="_blank" style="
+    background:#1877F2;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    text-decoration:none;
+    font-size:28px;
+    color:white;
+  ">📘</a>
+
+  <!-- Email -->
+  <a href="mailto:alphascleaning21@outlook.com" style="
+    background:#FF8C00;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    text-decoration:none;
+    font-size:28px;
+    color:white;
+  ">✉️</a>
+
+  <!-- Back to Top -->
+  <a id="backToTop" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="
+    background:#1E8F6F;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    text-decoration:none;
+    font-size:28px;
+    color:white;
+    opacity:0;
+    transition:opacity 0.5s ease;
+    pointer-events:none;
+  ">⬆️</a>
+
+</div>
+
+<!-- CLOCK SCRIPT -->
+<script>
+function updateClock() {
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2, '0');
+  const m = String(now.getMinutes()).padStart(2, '0');
+  const s = String(now.getSeconds()).padStart(2, '0');
+  document.getElementById('clock').textContent = `${h}:${m}:${s}`;
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+<!-- GREETING SCRIPT -->
+<script>
+function updateGreeting() {
+  const hour = new Date().getHours();
+  let greeting = "";
+
+  if (hour < 12) greeting = "Good morning, Alpha!";
+  else if (hour < 18) greeting = "Good afternoon, Alpha!";
+  else greeting = "Good evening, Alpha!";
+
+  document.getElementById('greeting').textContent = greeting;
+}
+updateGreeting();
+</script>
+
+<!-- WEATHER SCRIPT -->
+<script>
+async function updateWeather() {
+  const lat = 47.7267;
+  const lon = 10.3139;
+
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const temp = Math.round(data.current_weather.temperature);
+    const code = data.current_weather.weathercode;
+
+    const icons = {
+      0: "☀️", 1: "🌤️", 2: "⛅", 3: "☁️",
+      45: "🌫️", 48: "🌫️",
+      51: "🌦️", 61: "🌧️",
+      71: "❄️", 95: "⛈️"
+    };
+
+    const icon = icons[code] || "🌡️";
+
+    document.getElementById("weather").textContent = `${icon} ${temp}°C`;
+  } catch {
+    document.getElementById("weather").textContent = "Weather unavailable";
+  }
+}
+
+updateWeather();
+setInterval(updateWeather, 15 * 60 * 1000);
+</script>
+
+<!-- BACK TO TOP FADE-IN SCRIPT -->
+<script>
+window.addEventListener("scroll", function() {
+  const btn = document.getElementById("backToTop");
+
+  if (window.scrollY > 300) {
+    btn.style.opacity = "1";
+    btn.style.pointerEvents = "auto";
+  } else {
+    btn.style.opacity = "0";
+    btn.style.pointerEvents = "none";
+  }
+});
+</script>
 
 </body>
 </html>
