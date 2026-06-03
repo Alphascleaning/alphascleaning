@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha's Cleaning – Our Services</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#ffffff; color:#333; }
+    h1, h2, h3 { color:#1E8F6F; }
+    .section { padding:80px 20px; max-width:1100px; margin:0 auto; }
+    @media (max-width:768px) { .section { padding:50px 15px; } }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header style="width:100%; background:#ffffff; border-bottom:1px solid #e5e5e5;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:10px 20px;">
+
+    <!-- Logo -->
+    <img src="/logo-header.png" alt="Alpha's Cleaning Logo" style="height:80px; width:auto;">
+
+    <!-- Navigation -->
+    <nav style="display:flex; gap:25px; font-size:18px;">
+      <a href="/index.html" style="text-decoration:none; color:#333;">Home</a>
+      <a href="/services.html" style="text-decoration:none; color:#1E8F6F; font-weight:bold;">Services</a>
+      <a href="/contact.html" style="text-decoration:none; color:#333;">Contact</a>
+    </nav>
+
+    <!-- Right Side -->
+    <div style="display:flex; align-items:center; gap:20px;">
+      <div style="display:flex; gap:10px; font-size:22px;">
+        <a href="/services.html">🇬🇧</a>
+        <a href="/de/services.html">🇩🇪</a>
+      </div>
+      <div id="clock" style="font-size:18px; font-weight:bold;"></div>
+      <div id="greeting" style="font-size:18px; font-weight:bold;"></div>
+      <div id="weather" style="font-size:18px; font-weight:bold;"></div>
+    </div>
+
+  </div>
+</header>
+
+<!-- SERVICES SECTION -->
+<section class="section">
+  <h1 style="text-align:center; margin-bottom:40px;">Our Cleaning Services</h1>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px;">
+
+    <div style="background:#f5f5f5; padding:25px; border-radius:8px; border:1px solid #ddd;">
+      <h2>Holiday Apartment Cleaning</h2>
+      <p>Complete service including laundry, bed preparation, restocking, and guest readiness.</p>
+    </div>
+
+    <div style="background:#f5f5f5; padding:25px; border-radius:8px; border:1px solid #ddd;">
+      <h2>Home Cleaning</h2>
+      <p>Regular cleaning for kitchens, bathrooms, floors, dusting, and general home care.</p>
+    </div>
+
+    <div style="background:#f5f5f5; padding:25px; border-radius:8px; border:1px solid #ddd;">
+      <h2>Deep Cleaning</h2>
+      <p>Intensive cleaning including appliances, windows, corners, and hard‑to‑reach areas.</p>
+    </div>
+
+    <div style="background:#f5f5f5; padding:25px; border-radius:8px; border:1px solid #ddd;">
+      <h2>Office & Commercial Cleaning</h2>
+      <p>Professional cleaning for offices, shops, and commercial spaces.</p>
+    </div>
+
+    <div style="background:#f5f5f5; padding:25px; border-radius:8px; border:1px solid:#ddd;">
+      <h2>Move‑In / Move‑Out Cleaning</h2>
+      <p>Full property cleaning for tenants, landlords, and property managers.</p>
+    </div>
+
+    <div style="background:#f5f5f5; padding:25px; border-radius:8px; border:1px solid:#ddd;">
+      <h2>Custom Cleaning Packages</h2>
+      <p>Tailored cleaning solutions based on your needs and schedule.</p>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; margin-top:50px;">
+    <a href="/contact.html" style="padding:15px 35px; background:#1E8F6F; color:white; text-decoration:none; border-radius:6px; font-size:20px;">Request a Quote</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="width:100%; background:#1E8F6F; color:white; padding:40px 20px; text-align:center;">
+  <h3>Alpha's Cleaning</h3>
+  <p>Health is Wealth</p>
+  <p>Email: alphascleaning21@outlook.com</p>
+  <p>Phone: +49 176 82131743</p>
+  <p>Kempten, Germany</p>
+  <hr style="border:0; border-top:1px solid rgba(255,255,255,0.3); margin:25px auto; width:60%;">
+  <p style="font-size:14px; opacity:0.8;">© 2026 Alpha's Cleaning — All Rights Reserved</p>
+</footer>
+
+<!-- CLOCK SCRIPT -->
+<script>
+function updateClock() {
+  const now = new Date();
+  document.getElementById('clock').textContent =
+    now.toLocaleTimeString('en-GB', { hour12:false });
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+<!-- GREETING SCRIPT -->
+<script>
+function updateGreeting() {
+  const hour = new Date().getHours();
+  let greeting = hour < 12 ? "Good morning, Alpha!" :
+                 hour < 18 ? "Good afternoon, Alpha!" :
+                             "Good evening, Alpha!";
+  document.getElementById('greeting').textContent = greeting;
+}
+updateGreeting();
+</script>
+
+<!-- WEATHER SCRIPT -->
+<script>
+async function updateWeather() {
+  const url = "https://api.open-meteo.com/v1/forecast?latitude=47.7267&longitude=10.3139&current_weather=true";
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    const temp = Math.round(data.current_weather.temperature);
+    const icons = {0:"☀️",1:"🌤️",2:"⛅",3:"☁️",45:"🌫️",48:"🌫️",51:"🌦️",61:"🌧️",71:"❄️",95:"⛈️"};
+    const icon = icons[data.current_weather.weathercode] || "🌡️";
+    document.getElementById("weather").textContent = `${icon} ${temp}°C`;
+  } catch {
+    document.getElementById("weather").textContent = "Weather unavailable";
+  }
+}
+updateWeather();
+setInterval(updateWeather, 900000);
+</script>
+
+</body>
+</html>
