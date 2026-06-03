@@ -30,6 +30,36 @@
       text-align: center;
     }
 
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-text {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
     header h1 {
       font-size: 36px;
       margin-bottom: 10px;
@@ -120,8 +150,24 @@
 <body>
 
 <header>
-  <h1>Alphas Cleaning</h1>
-  <p>Professionelle Reinigungsservices in Kempten & Umgebung</p>
+  <div class="nav">
+    <div class="logo-wrap">
+      <img src="logo.png" alt="Alphas Cleaning Logo" style="height:60px; border-radius:8px;">
+      <div>
+        <div class="brand-text">Alphas Cleaning</div>
+        <div style="font-size:11px; opacity:0.9;">Health is Wealth</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#preise">Preise</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </div>
+
+  <h1>Professionelle Reinigungsservices in Kempten & Umgebung</h1>
+  <p>Zuverlässig. Gründlich. Schnell.</p>
 
   <a href="#kontakt" class="btn btn-primary">Reinigung buchen</a>
   <a href="#preise" class="btn btn-secondary">Kostenloses Angebot</a>
