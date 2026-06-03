@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha's Cleaning – Startseite</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#ffffff; color:#333; }
+    h1, h2, h3 { color:#1E8F6F; }
+    .section { padding:80px 20px; max-width:1100px; margin:0 auto; }
+    @media (max-width:768px) { .section { padding:50px 15px; } }
+  </style>
+</head>
+
+<body>
+
+<header style="width:100%; background:#ffffff; border-bottom:1px solid #e5e5e5;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:10px 20px;">
+    <img src="/logo-header.png" alt="Alpha's Cleaning Logo" style="height:80px; width:auto;">
+    <nav style="display:flex; gap:25px; font-size:18px;">
+      <a href="/de/index.html" style="text-decoration:none; color:#1E8F6F; font-weight:bold;">Startseite</a>
+      <a href="/de/services.html" style="text-decoration:none; color:#333;">Leistungen</a>
+      <a href="/de/contact.html" style="text-decoration:none; color:#333;">Kontakt</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:20px;">
+      <div style="display:flex; gap:10px; font-size:22px;">
+        <a href="/index.html">🇬🇧</a>
+        <a href="/de/index.html">🇩🇪</a>
+      </div>
+      <div id="clock" style="font-size:18px; font-weight:bold;"></div>
+      <div id="greeting" style="font-size:18px; font-weight:bold;"></div>
+      <div id="weather" style="font-size:18px; font-weight:bold;"></div>
+    </div>
+  </div>
+</header>
+
+<section style="width:100%; background:#f5f5f5; padding:80px 20px; text-align:center;">
+  <h1 style="font-size:48px; margin-bottom:20px;">Willkommen bei Alpha's Cleaning</h1>
+  <p style="font-size:22px; max-width:700px; margin:0 auto;">
+    Zuverlässige, professionelle und gründliche Reinigungsdienste in Kempten und Umgebung.
+  </p>
+  <a href="/de/contact.html" style="display:inline-block; margin-top:30px; padding:15px 35px; background:#1E8F6F; color:#fff; text-decoration:none; font-size:20px; border-radius:6px;">Reinigung buchen</a>
+</section>
+
+<section class="section">
+  <h2 style="text-align:center; margin-bottom:30px;">Über uns</h2>
+  <p style="font-size:20px; line-height:1.6;">
+    Alpha's Cleaning bietet hochwertige Reinigungsdienste für Wohnungen, Ferienunterkünfte und Unternehmen.
+    Wir legen Wert auf Zuverlässigkeit, Professionalität und Liebe zum Detail – damit Du immer das beste Ergebnis bekommst.
+  </p>
+</section>
+
+<section class="section" style="background:#f5f5f5;">
+  <h2 style="text-align:center; margin-bottom:40px;">Unsere Leistungen</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:30px;">
+    <div style="background:white; padding:25px; border-radius:8px; border:1px solid #ddd;">
+      <h3>Ferienwohnung Reinigung</h3>
+      <p>Komplettservice inklusive Wäsche, Betten, Auffüllen und Gästevorbereitung.</p>
+    </div>
+    <div style="background:white; padding:25px; border-radius:8px; border:1px solid #ddd;">
+      <h3>Haushaltsreinigung</h3>
+      <p>Böden, Bäder, Küche, Staubwischen und allgemeine Hauspflege.</p>
+    </div>
+    <div style="background:white; padding:25px; border-radius:8px; border:1px solid #ddd;">
+      <h3>Tiefenreinigung</h3>
+      <p>Intensive Reinigung inklusive Geräte, Fenster und schwer erreichbare Bereiche.</p>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:40px;">
+    <a href="/de/services.html" style="padding:12px 30px; background:#1E8F6F; color:white; text-decoration:none; border-radius:6px; font-size:18px;">Alle Leistungen ansehen</a>
+  </div>
+</section>
+
+<section class="section" style="text-align:center;">
+  <h2>Kontakt</h2>
+  <p style="font-size:20px;">Email: alphascleaning21@outlook.com</p>
+  <p style="font-size:20px;">Telefon: +49 176 82131743</p>
+  <a href="/de/contact.html" style="padding:12px 30px; background:#1E8F6F; color:white; text-decoration:none; border-radius:6px; font-size:18px;">Nachricht senden</a>
+</section>
+
+<footer style="width:100%; background:#1E8F6F; color:white; padding:40px 20px; text-align:center;">
+  <h3>Alpha's Cleaning</h3>
+  <p>Gesundheit ist Reichtum</p>
+  <p>Email: alphascleaning21@outlook.com</p>
+  <p>Telefon: +49 176 82131743</p>
+  <p>Kempten, Deutschland</p>
+  <hr style="border:0; border-top:1px solid rgba(255,255,255,0.3); margin:25px auto; width:60%;">
+  <p style="font-size:14px; opacity:0.8;">© 2026 Alpha's Cleaning — Alle Rechte vorbehalten</p>
+</footer>
+
+<script>
+function updateClock() {
+  const now = new Date();
+  document.getElementById('clock').textContent =
+    now.toLocaleTimeString('de-DE', { hour12:false });
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+function updateGreeting() {
+  const hour = new Date().getHours();
+  let greeting = hour < 12 ? "Guten Morgen, Alpha!" :
+                 hour < 18 ? "Guten Nachmittag, Alpha!" :
+                             "Guten Abend, Alpha!";
+  document.getElementById('greeting').textContent = greeting;
+}
+updateGreeting();
+
+async function updateWeather() {
+  const url = "https://api.open-meteo.com/v1/forecast?latitude=47.7267&longitude=10.3139&current_weather=true";
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    const temp = Math.round(data.current_weather.temperature);
+    const icons = {0:"☀️",1:"🌤️",2:"⛅",3:"☁️",45:"🌫️",48:"🌫️",51:"🌦️",61:"🌧️",71:"❄️",95:"⛈️"};
+    const icon = icons[data.current_weather.weathercode] || "🌡️";
+    document.getElementById("weather").textContent = `${icon} ${temp}°C`;
+  } catch {
+    document.getElementById("weather").textContent = "Wetter nicht verfügbar";
+  }
+}
+updateWeather();
+setInterval(updateWeather, 900000);
+</script>
+
+</body>
+</html>
