@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha's Cleaning – Einzelseite</title>
+
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#ffffff; color:#333; scroll-behavior:smooth; }
+    h1, h2, h3 { color:#1E8F6F; }
+    .section { padding:80px 20px; max-width:1100px; margin:0 auto; }
+    @media (max-width:768px) { .section { padding:50px 15px; } }
+    button {
+      background:#1E8F6F; color:white; padding:15px 30px;
+      border:none; border-radius:6px; font-size:18px; cursor:pointer;
+    }
+    button:hover { background:#176f56; }
+
+    /* Social Bar Styling */
+    .social-contact-bar {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 9999;
+    }
+    .social-contact-bar .scb-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: #333;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    }
+    .social-contact-bar .scb-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+    }
+    .social-contact-bar .scb-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+      opacity: 0.9;
+    }
+    .scb-fb { background:#1877F2; }
+    .scb-li { background:#0A66C2; }
+    .scb-g  { background:#DB4437; }
+    .scb-mh { background:#1A73E8; }
+    .scb-wa { background:#25D366; }
+    .scb-call { background:#0B875B; }
+    .scb-mail { background:#FF8C00; }
+
+    nav a { text-decoration:none; color:#333; }
+    nav a.active { color:#1E8F6F; font-weight:bold; }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header style="width:100%; background:#ffffff; border-bottom:1px solid #e5e5e5; position:sticky; top:0; z-index:1000;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:10px 20px;">
+
+    <img src="/alphascleaning/logo-header.png" style="width:360px; height:auto;">
+
+    <nav style="display:flex; gap:25px; font-size:18px;">
+      <a href="#home" class="active">Startseite</a>
+      <a href="#services">Leistungen</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:20px;">
+      <div style="display:flex; gap:10px; font-size:22px;">
+        <a href="/alphascleaning/index.html">🇬🇧</a>
+        <a href="/alphascleaning/de/index.html">🇩🇪</a>
+      </div>
+      <div id="clock" style="font-size:18px; font-weight:bold;"></div>
+      <div id="greeting" style="font-size:18px; font-weight:bold;"></div>
+      <div id="weather" style="font-size:18px; font-weight:bold;"></div>
+    </div>
+
+  </div>
+</header>
+
+<!-- HOME -->
+<section id="home" class="section">
+  <h1 style="text-align:center;">Willkommen bei Alpha's Cleaning</h1>
+  <p style="font-size:20px; text-align:center; max-width:700px; margin:0 auto 40px;">
+    Zuverlässige, professionelle und gründliche Reinigungsdienste in Kempten und Umgebung.
+  </p>
+  <div style="text-align:center;">
+    <a href="#contact"><button>Reinigung buchen</button></a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <h2>Unsere Reinigungsleistungen</h2>
+
+  <h3>🏠 Wohnungsreinigung</h3>
+  <ul>
+    <li>Regelmäßige wöchentliche oder zweiwöchentliche Reinigung</li>
+    <li>Grundreinigung</li>
+    <li>Bad- und Küchenhygiene</li>
+    <li>Staubwischen, Saugen, Wischen</li>
+  </ul>
+
+  <h3>🏡 Ferienwohnung / Apartmentreinigung</h3>
+  <ul>
+    <li>Reinigung zwischen Gästen</li>
+    <li>Frische Bettwäsche und Handtücher</li>
+    <li>Auffüllen von Verbrauchsartikeln</li>
+    <li>Komplette Vorbereitung für neue Gäste</li>
+  </ul>
+
+  <h3>🏢 Büro- & Geschäftsreinigung</h3>
+  <ul>
+    <li>Tägliche oder geplante Reinigung</li>
+    <li>Reinigung von Arbeitsplätzen</li>
+    <li>Entsorgung von Abfällen</li>
+    <li>Bodenpflege und Desinfektion</li>
+  </ul>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Kontakt</h2>
+
+  <p style="font-size:18px;">
+    <strong>Email:</strong> alphascleaning21@outlook.com<br>
+    <strong>Telefon:</strong> +49 176 82131743<br>
+    <strong>Standort:</strong> Kempten, Deutschland
+  </p>
+
+  <h3>📩 Nachricht senden</h3>
+  <form action="https://formspree.io/f/mqakjvrl" method="POST">
+    <input type="text" name="name" placeholder="Ihr Name" required>
+    <input type="email" name="email" placeholder="Ihre Email" required>
+    <textarea name="message" rows="6" placeholder="Ihre Nachricht" required></textarea>
+    <button type="submit">Nachricht senden</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer style="width:100%; background:#1E8F6F; color:white; padding:40px 20px; text-align:center;">
+  <h3>Alpha's Cleaning</h3>
+  <p>Gesundheit ist Reichtum</p>
+  <p>Email: alphascleaning21@outlook.com</p>
+  <p>Telefon: +49 176 82131743</p>
+  <p>Kempten, Deutschland</p>
+</footer>
+
+<!-- SOCIAL MEDIA BAR -->
+<div class="social-contact-bar">
+
+  <a href="https://www.facebook.com/profile.php?id=100093013924902" target="_blank" class="scb-btn scb-fb">
+    <svg viewBox="0 0 24 24"><path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07C2 17.1 5.66 21.24 10.44 22v-6.99H7.9v-2.94h2.54v-2.24c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.9h2.78l-.44 2.94h-2.34V22C18.34 21.24 22 17.1 22 12.07z"/></svg>
+  </a>
+
+  <a href="https://www.linkedin.com/in/alpha-kamara-794a10288/" target="_blank" class="scb-btn scb-li">
+    <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.08 1 2.5 1s2.48 1.12 2.48 2.5zM.32 8.16h4.36V24H.32V8.16zM8.34 8.16h4.18v2.15h.06c.58-1.1 2-2.26 4.11-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.36v-7.7c0-1.84-.03-4.21-2.57-4.21-2.57 0-2.97 2.01-2.97 4.08V24H8.34V8.16z"/></svg>
+  </a>
+
+  <a href="https://maps.app.goo.gl/h6kQ9gVy4QiSfsbbA" target="_blank" class="scb-btn scb-g">
+    <svg viewBox="0 0 24 24"><path d="M12 2C7.59 2 4 5.58 4 10c0 5.25 6.4 11.54 7.01 12.13.27.26.7.26.97 0C13.6 21.54 20 15.25 20 10c0-4.42-3.59-8-8-8zm0 11.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 6.5 12 6.5s3.5 1.57 3.5 3.5S13.93 13.5 12 13.5z"/></svg>
+  </a>
+
+  <a href="https://www.my-hammer.de/auftragnehmer/alpha-kamara" target="_blank" class="scb-btn scb-mh">
+    <svg viewBox="0 0 24 24"><path d="M2 3l4-1 4 4-1.5 1.5 2 2L9 11 7 9l-3 3-2-2 3-3L2 3zm11 7l3-3 4 4-2 2-1-1-4 7h-3l3-7-1-1z"/></svg>
+  </a>
+
+  <a href="https://wa.me/4917660409975" target="_blank" class="scb-btn scb-wa">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.59 2 2.2 6.37 2.2 11.8c0 2.08.6 3.98 1.64 5.6L2 22l4.72-1.8a9.7 9.7 0 0 0 5.32 1.56h.01c5.45 0 9.84-4.37 9.84-9.8C21.9 6.37 17.5 2 12.04 2zm5.7 13.9c-.24.68-1.4 1.3-1.93 1.34-.5.05-1.12.07-1.8-.11-.41-.1-.94-.3-1.63-.59-2.87-1.24-4.73-4.13-4.88-4.33-.14-.2-1.16-1.54-1.16-2.94 0-1.4.73-2.08.99-2.37.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.66.5.24.58.82 2 .89 2.14.07.14.12.3.02.48-.1.2-.15.3-.3.47-.14.17-.3.38-.43.51-.14.14-.29.3-.13.58.17.28.76 1.25 1.63 2.03 1.12.99 2.06 1.3 2.37 1.45.3.15.47.13.64-.08.17-.2.73-.85.93-1.14.2-.28.4-.24.66-.14.27.1 1.7.8 1.99.95.29.14.48.21.55.33.07.12.07.7-.17 1.38z"/></svg>
+  </a>
+
+  <a href="tel:+4917660409975" class="scb-btn scb-call">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C11.3 22 2 12.7 2 2a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.59a1 1 0 0 1-.25 1.01l-2.2 2.19z"/></svg>
+  </a>
+
+  <a href="mailto:alphascleaning21@outlook.com" class="scb-btn scb-mail">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4zm0 12h16V9l-8 7-8-7v9z"/></svg>
+  </a>
+
+</div>
+
+<!-- CLOCK -->
+<script>
+function updateClock() {
+  const now = new Date();
+  document.getElementById('clock').textContent =
+    now.toLocaleTimeString('de-DE', { hour12:false });
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+<!-- GREETING -->
+<script>
+function updateGreeting() {
+  const hour = new Date().getHours();
+  let greeting = hour < 12 ? "Guten Morgen, Alpha!" :
+                 hour < 18 ? "Guten Tag, Alpha!" :
+                             "Guten Abend, Alpha!";
+  document.getElementById('greeting').textContent = greeting;
+}
+updateGreeting();
+</script>
+
+<!-- WEATHER -->
+<script>
+async function updateWeather() {
+  const url = "https://api.open-meteo.com/v1/forecast?latitude=47.7267&longitude=10.3139&current_weather=true";
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    const temp = Math.round(data.current_weather.temperature);
+    const icons = {0:"☀️",1:"🌤️",2:"⛅",3:"☁️",45:"🌫️",48:"🌫️",51:"🌦️",61:"🌧️",71:"❄️",95:"⛈️"};
+    const icon = icons[data.current_weather.weathercode] || "🌡️";
+    document.getElementById("weather").textContent = `${icon} ${temp}°C`;
+  } catch {
+    document.getElementById("weather").textContent = "Wetter nicht verfügbar";
+  }
+}
+updateWeather();
+setInterval(updateWeather, 900000);
+</script>
+
+</body>
+</html>
