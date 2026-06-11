@@ -4,18 +4,36 @@
   <meta charset="UTF-8">
   <title>Alphas Cleaning Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  /* --- FIX NAVIGATION WRAPPING --- */
+ /* --- FIX NAVIGATION WRAPPING --- */
 nav ul {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 20px;
-  white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 20px;
+    white-space: nowrap;
 }
 
 nav ul li a {
-  padding: 8px 10px;
+    padding: 8px 10px;
 }
+
+/* --- FIX HEADER SHRINKING --- */
+header .header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+nav {
+  flex-shrink: 1;
+}
+
+nav ul {
+  flex-shrink: 1;
+}
+
 
   <style>
     :root {
