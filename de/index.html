@@ -70,27 +70,25 @@
     }
 
     nav ul {
-      list-style: none;
-      display: flex;
-      gap: 18px;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
+    list-style: none;
+    display: flex;
+    gap: 18px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
 /* FIX NAV SPACING */
 nav ul {
     gap: 10px; /* reduce spacing between menu items */
 }
 
 nav a {
-    padding: 4px 8px; /* smaller padding so long words fit better */
-    font-size: 0.9rem; /* slightly smaller text */
+    padding: 4px 8px;              /* smaller padding */
+    font-size: 0.9rem;             /* slightly smaller text */
+    border-radius: 999px;
+    transition: background var(--transition-fast), color var(--transition-fast);
 }
 
-    nav a {
-      padding: 6px 10px;
-      border-radius: 999px;
-      transition: background var(--transition-fast), color var(--transition-fast);
-    }
 
     nav a:hover {
       background: var(--primary);
