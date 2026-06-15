@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Alpha’s Cleaning – Reinigungsservice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --primary: #1E8F6F;
+      --bg: #f5f7fa;
+      --card-bg: #ffffff;
+      --text-main: #222;
+      --text-muted: #666;
+      --shadow-soft: 0 8px 20px rgba(0,0,0,0.08);
+      --radius-card: 14px;
+      --radius-photo: 18px;
+      --transition-fast: 0.25s ease;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    main {
+      max-width: 1100px;
+      margin: 20px auto 40px;
+      padding: 0 16px;
+    }
+
+    section {
+      margin: 40px 0;
+    }
+
+    .section-intro {
+      margin-top: 8px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo img {
+      width: 220px;
+      height: auto;
+      display: block;
+    }
+
+    /* NAVIGATION */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    nav a {
+      padding: 4px 8px;
+      font-size: 0.9rem;
+      border-radius: 999px;
+      transition: background var(--transition-fast), color var(--transition-fast);
+    }
+
+    nav a:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* WEATHER */
+    .weather {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f0f4f7;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .weather:hover {
+      background: #e3edf3;
+      transform: translateY(-1px);
+    }
+
+    .weather-icon { font-size: 1.1rem; }
+
+    .weather-dropdown {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px 10px;
+      display: none;
+      animation: fadeSlideDown 0.35s ease forwards;
+    }
+
+    .weather-panel {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 18px;
+    }
+
+    .weather-days {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      font-size: 0.85rem;
+    }
+
+    .weather-day {
+      background: #f7fafc;
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+
+    /* LANGUAGE FLAGS */
+    .lang-flags {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1.1rem;
+    }
+
+    .lang-flags a {
+      padding: 4px 6px;
+      border-radius: 999px;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .lang-flags a:hover {
+      background: #f0f4f7;
+      transform: translateY(-1px);
+    }
+
+    /* CLOCK */
+    .clock {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      min-width: 60px;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="top">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="#home">
+          <img src="../logo-header.png" alt="Alpha’s Cleaning Logo">
+        </a>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Startseite</a></li>
+          <li><a href="#about">Über uns</a></li>
+          <li><a href="#services">Dienstleistungen</a></li>
+          <li><a href="#pricing">Preise</a></li>
+          <li><a href="#why">Warum wir?</a></li>
+          <li><a href="javascript:void(0)" onclick="openContactPopup()">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <div class="weather" onclick="toggleWeather()">
+          <span class="weather-icon" id="weatherIcon">🌤️</span>
+          <span id="weatherLabel">Wochenwetter</span>
+        </div>
+
+        <div class="lang-flags">
+          <a href="../index.html">🇬🇧</a>
+          <a href="index.html">🇩🇪</a>
+        </div>
+
+        <div id="clock" class="clock"></div>
+      </div>
+    </div>
+
+    <div id="weatherDropdown" class="weather-dropdown">
+      <div class="weather-panel">
+        <h3>Wettervorhersage der Woche</h3>
+        <div id="weatherDays" class="weather-days">
+          <div class="weather-day">Lade Vorhersage…</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HOME -->
+    <section id="home">
+      <h1>Alpha’s Cleaning – Professionelle Reinigungsdienste</h1>
+      <p class="section-intro">
+        Zuverlässige, professionelle Reinigung für Wohnungen, Häuser, Büros und Gewerbeobjekte.
+        Wir kombinieren moderne Ausstattung, geschultes Personal und klare Kommunikation.
+      </p>
+    </section>
+
+    <!-- ABOUT US -->
+    <section id="about">
+      <h2>Über uns</h2>
+
+      <div class="about-grid">
+        <div class="about-photo-wrapper">
+          <img src="../about-alpha-photo.jpg" alt="Alpha – Gründer von Alpha’s Cleaning">
+        </div>
+
+        <div class="about-text">
+          <p>
+            Mein Name ist Alpha, und ich habe Alpha’s Cleaning mit einem klaren Ziel gegründet:
+            zuverlässige, hochwertige Reinigungsdienste anzubieten, auf die sich Kunden wirklich verlassen können.
+          </p>
+
+          <p>
+            Mit einem Hintergrund in Lager- und Logistikmanagement bringe ich Struktur,
+            Disziplin und Effizienz in jedes Projekt ein. Ob Privatwohnung, Büro oder Gewerbe –
+            wir behandeln jedes Objekt mit Sorgfalt und Liebe zum Detail.
+          </p>
+
+          <p>
+            Wir glauben an klare Kommunikation, Pünktlichkeit und gleichbleibende Qualität.
+            Wenn Sie bei uns buchen, wissen Sie genau, was Sie erwartet – keine Überraschungen, nur saubere Räume.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>Unsere Dienstleistungen</h2>
+      <p class="section-intro">
+        Von regelmäßiger Unterhaltsreinigung bis zu spezialisierten Leistungen – wir bieten ein umfassendes Angebot
+        für private und gewerbliche Immobilien.
+      </p>
+
+      <div class="services-grid">
+
+        <!-- APARTMENT CLEANING -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('apt')">
+            <div class="service-title">
+              <span class="service-emoji">🏢</span>
+              <span>Wohnungsreinigung</span>
+            </div>
+            <div class="service-toggle" id="toggle-apt">Mehr ▾</div>
+          </div>
+
+          <div class="service-short">
+            Regelmäßige oder einmalige Reinigung für Wohnungen jeder Größe.
+          </div>
+
+          <div class="service-details" id="details-apt">
+            <p>Ideal für Mieter, Vermieter und Hausverwaltungen.</p>
+            <ul>
+              <li>Staubwischen, Saugen, Wischen</li>
+              <li>Bad & Küche gründlich</li>
+              <li>Desinfektion & Müllentsorgung</li>
+              <li>Ein-/Auszug auf Anfrage</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- HOUSE CLEANING -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('house')">
+            <div class="service-title">
+              <span class="service-emoji">🏠</span>
+              <span>Hausreinigung</span>
+            </div>
+            <div class="service-toggle" id="toggle-house">Mehr ▾</div>
+          </div>
+
+          <div class="service-short">
+            Komplette Reinigung für Häuser.
+          </div>
+
+          <div class="service-details" id="details-house">
+            <ul>
+              <li>Wöchentlich / 2‑wöchentlich / monatlich</li>
+              <li>Bad & Küche detailliert</li>
+              <li>Bodenpflege</li>
+              <li>Grundreinigung optional</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- OFFICE CLEANING -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('office')">
+            <div class="service-title">
+              <span class="service-emoji">💼</span>
+              <span>Büroreinigung</span>
+            </div>
+            <div class="service-toggle" id="toggle-office">Mehr ▾</div>
+          </div>
+
+          <div class="service-short">
+            Professionelle Reinigung für Büros.
+          </div>
+
+          <div class="service-details" id="details-office">
+            <ul>
+              <li>Schreibtische & Besprechungsräume</li>
+              <li>Desinfektion</li>
+              <li>Müllentsorgung</li>
+              <li>Flexible Zeiten</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MAINTENANCE CLEANING -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('maint')">
+            <div class="service-title">
+              <span class="service-emoji">🧹</span>
+              <span>Unterhaltsreinigung</span>
+            </div>
+            <div class="service-toggle" id="toggle-maint">Mehr ▾</div>
+          </div>
+
+          <div class="service-short">
+            Regelmäßige Pflege für Gewerbe.
+          </div>
+
+          <div class="service-details" id="details-maint">
+            <ul>
+              <li>Täglich / wöchentlich</li>
+              <li>Staub, Böden</li>
+              <li>Gemeinschaftsflächen</li>
+              <li>Individuelle Pläne</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- WINDOW CLEANING -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('window')">
+            <div class="service-title">
+              <span class="service-emoji">🪟</span>
+              <span>Fensterreinigung</span>
+            </div>
+            <div class="service-toggle" id="toggle-window">Mehr ▾</div>
+          </div>
+
+          <div class="service-short">
+            Streifenfreie Glasreinigung.
+          </div>
+
+          <div class="service-details" id="details-window">
+            <ul>
+              <li>Innen & außen</li>
+              <li>Glastüren & Schaufenster</li>
+              <li>Profi‑Werkzeuge</li>
+              <li>Flexible Termine</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CARETAKER -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('caretaker')">
+            <div class="service-title">
+              <span class="service-emoji">🛠️</span>
+              <span>Hausmeisterservice</span>
+            </div>
+            <div class="service-toggle" id="toggle-caretaker">Mehr ▾</div>
+          </div>
+
+          <div class="service-short">
+            Betreuung von Objekten.
+          </div>
+
+          <div class="service-details" id="details-caretaker">
+            <ul>
+              <li>Kontrolle von Bereichen</li>
+              <li>Kleinreparaturen</li>
+              <li>Überwachung</li>
+              <li>Meldung von Schäden</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- WINTER SERVICE -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('winter')">
+            <div class="service-title">
+              <span class="service-emoji">❄️</span>
+              <span>Winterdienst</span>
+            </div>
+            <div class="service-toggle" id="toggle-winter">Mehr ▾</div>
+          </div>
+
+          <div class="service-short">
+            Sicher durch den Winter.
+          </div>
+
+          <div class="service-details" id="details-winter">
+            <ul>
+              <li>Schneeräumung</li>
+              <li>Streuen</li>
+              <li>Flexible Einsätze</li>
+              <li>Für Privat & Gewerbe</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- STAIRWELL -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('stair')">
+            <div class="service-title">
+              <span class="service-emoji">🪜</span>
+              <span>Treppenhausreinigung</span>
+            </div>
+            <div class="service-toggle" id="toggle-stair">Mehr ▾</div>
+          </div>
+
+          <div class="service-short">
+            Saubere Treppenhäuser.
+          </div>
+
+          <div class="service-details" id="details-stair">
+            <ul>
+              <li>Fegen & Wischen</li>
+              <li>Geländer & Wände</li>
+              <li>Spinnweben entfernen</li>
+              <li>Für MFH & Gewerbe</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CONSTRUCTION CLEANING -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('construction')">
+            <div class="service-title">
+              <span class="service-emoji">🚧</span>
+              <span>Baureinigung</span>
+            </div>
+            <div class="service-toggle" id="toggle-construction">Mehr ▾</div>
+          </div>
+
+          <div class="service-short">
+            Nach Bauarbeiten.
+          </div>
+
+          <div class="service-details" id="details-construction">
+            <ul>
+              <li>Entfernung von Staub & Bauschutt</li>
+              <li>Reinigung von Böden & Fenstern</li>
+              <li>Endreinigung vor Übergabe</li>
+              <li>Flexible Terminplanung</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <h2>Preise</h2>
+      <p class="section-intro">
+        Jede Immobilie ist anders. Unsere Preise sind transparent und fair – mit klaren Paketen und der Möglichkeit
+        für individuelle Angebote.
+      </p>
+
+      <div class="pricing-grid">
+
+        <!-- BASIC -->
+        <div class="pricing-card">
+          <div class="pricing-name">Basic</div>
+          <div class="pricing-price">ab €49</div>
+          <div class="pricing-desc">Ideal für kleine Wohnungen oder leichte Reinigungen.</div>
+          <ul>
+            <li>Oberflächen & Böden</li>
+            <li>Bad & Küche auffrischen</li>
+            <li>Einmalig oder regelmäßig</li>
+          </ul>
+          <button class="btn-primary" onclick="openQuoteForm()">Angebot anfragen</button>
+        </div>
+
+        <!-- STANDARD -->
+        <div class="pricing-card">
+          <div class="pricing-name">Standard</div>
+          <div class="pricing-price">ab €89</div>
+          <div class="pricing-desc">Perfekt für Häuser und mittelgroße Büros.</div>
+          <ul>
+            <li>Komplette Wohnungs- oder Büroreinigung</li>
+            <li>Detaillierte Bad- & Küchenpflege</li>
+            <li>Regelmäßige Intervalle möglich</li>
+          </ul>
+          <button class="btn-primary" onclick="openQuoteForm()">Angebot anfragen</button>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="pricing-card">
+          <div class="pricing-name">Premium</div>
+          <div class="pricing-price">ab €149</div>
+          <div class="pricing-desc">Für große Immobilien oder Tiefenreinigungen.</div>
+          <ul>
+            <li>Umfassende Tiefenreinigung</li>
+            <li>Individuelle Checkliste</li>
+            <li>Ideal für Ein-/Auszug</li>
+          </ul>
+          <button class="btn-primary" onclick="openQuoteForm()">Angebot anfragen</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUOTE FORM POPUP -->
+    <div id="quoteFormOverlay">
+      <div id="quoteForm">
+        <h3>Angebot anfragen</h3>
+
+        <label for="serviceSelect">Dienstleistung auswählen</label>
+        <select id="serviceSelect">
+          <option value="Wohnungsreinigung">Wohnungsreinigung</option>
+          <option value="Hausreinigung">Hausreinigung</option>
+          <option value="Büroreinigung">Büroreinigung</option>
+          <option value="Unterhaltsreinigung">Unterhaltsreinigung</option>
+          <option value="Treppenhausreinigung">Treppenhausreinigung</option>
+          <option value="Baureinigung">Baureinigung</option>
+          <option value="Hausmeisterservice">Hausmeisterservice</option>
+          <option value="Winterdienst">Winterdienst</option>
+        </select>
+
+        <label for="phoneInput">Telefonnummer</label>
+        <input type="text" id="phoneInput" placeholder="Ihre Telefonnummer">
+
+        <label for="emailInput">E-Mail-Adresse</label>
+        <input type="email" id="emailInput" placeholder="Ihre E-Mail-Adresse">
+
+        <label for="notesInput">Zusätzliche Hinweise</label>
+        <textarea id="notesInput" placeholder="Wichtige Informationen…"></textarea>
+
+        <div class="quote-buttons">
+          <button class="quote-btn" onclick="sendQuoteEmail()">E-Mail</button>
+          <button class="quote-btn" onclick="sendQuoteWhatsApp()">WhatsApp</button>
+        </div>
+
+        <div class="quote-close" onclick="closeQuoteForm()">Schließen</div>
+      </div>
+    </div>
+    <!-- WHY CHOOSE US -->
+    <section id="why">
+      <h2>Warum wir?</h2>
+      <p class="section-intro">
+        Wir stehen für Qualität, Zuverlässigkeit und klare Kommunikation – damit Sie sich auf das Wesentliche konzentrieren können.
+      </p>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <div class="why-icon">🎓</div>
+          <div>
+            <div class="why-text-title">Geschultes Personal</div>
+            <div class="why-text-body">
+              Unser Team ist geschult, erfahren und arbeitet mit klaren Checklisten für gleichbleibende Ergebnisse.
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">🧰</div>
+          <div>
+            <div class="why-text-title">Professionelle Ausstattung</div>
+            <div class="why-text-body">
+              Wir nutzen moderne Werkzeuge und Reinigungsmittel, passend für unterschiedliche Oberflächen und Bereiche.
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">⏱️</div>
+          <div>
+            <div class="why-text-title">Pünktlich & zuverlässig</div>
+            <div class="why-text-body">
+              Pünktlichkeit und Verlässlichkeit gehören zu unserem Versprechen – Ihre Zeit ist wertvoll.
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">💬</div>
+          <div>
+            <div class="why-text-title">Klare Kommunikation</div>
+            <div class="why-text-body">
+              Wir halten die Kommunikation einfach und transparent, damit Erwartungen immer klar sind.
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">🔒</div>
+          <div>
+            <div class="why-text-title">Vertrauenswürdig & sorgfältig</div>
+            <div class="why-text-body">
+              Sie können uns Ihr Objekt anvertrauen – wir arbeiten sorgfältig und verantwortungsbewusst.
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">🌍</div>
+          <div>
+            <div class="why-text-title">Option für umweltfreundliche Produkte</div>
+            <div class="why-text-body">
+              Auf Wunsch setzen wir umweltfreundliche Reinigungsmittel ein – für ein grüneres Reinigungskonzept.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Kontakt</h2>
+      <p class="section-intro">
+        Bereit für eine Reinigung oder ein individuelles Angebot? Kontaktieren Sie uns – wir melden uns schnellstmöglich.
+      </p>
+
+      <p style="font-size:0.95rem; color:var(--text-muted);">
+        E-Mail: <strong>alphascleaning21@outlook.com</strong><br>
+        Telefon: <strong>+49 176 82131743</strong><br>
+        Standort: Kempten (Allgäu), Deutschland
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © <span id="year"></span> Alpha’s Cleaning. Alle Rechte vorbehalten.
+
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=100093013924902" target="_blank" title="Facebook">👍</a>
+      <a href="https://www.my-hammer.de/auftragnehmer/alpha-kamara" target="_blank" title="MyHammer">🔨</a>
+      <a href="https://maps.app.goo.gl/h6kQ9gVy4QiSfsbbA" target="_blank" title="Google Maps">📍</a>
+      <a href="#" title="Instagram (coming soon)">📸</a>
+    </div>
+  </footer>
+
+  <!-- CONTACT POPUP -->
+  <div id="contactPopup" class="contact-popup">
+    <div class="popup-header">Kontakt</div>
+
+    <div class="popup-icons">
+      <a href="https://wa.me/4917682131743" target="_blank" class="popup-icon">💬</a>
+      <a href="mailto:alphascleaning21@outlook.com" class="popup-icon">📧</a>
+    </div>
+
+    <div class="popup-close" onclick="closeContactPopup()">✖</div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    /* CLOCK */
+    function updateClock() {
+      const el = document.getElementById('clock');
+      if (!el) return;
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      el.textContent = h + ':' + m;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    /* CONTACT POPUP */
+    function openContactPopup() {
+      document.getElementById('contactPopup').style.display = 'block';
+    }
+    function closeContactPopup() {
+      document.getElementById('contactPopup').style.display = 'none';
+    }
+
+    /* WEATHER */
+    let weatherOpen = false;
+    let weatherLoaded = false;
+
+    function toggleWeather() {
+      const dropdown = document.getElementById('weatherDropdown');
+      weatherOpen = !weatherOpen;
+      dropdown.style.display = weatherOpen ? 'block' : 'none';
+      if (weatherOpen && !weatherLoaded) loadWeather();
+    }
+
+    function weatherIconFromCode(code) {
+      if (code === 0) return '☀️';
+      if (code === 1 || code === 2) return '🌤️';
+      if (code === 3) return '☁️';
+      if (code >= 45 && code <= 48) return '🌫️';
+      if (code >= 51 && code <= 67) return '🌦️';
+      if (code >= 71 && code <= 77) return '❄️';
+      if (code >= 80 && code <= 82) return '🌧️';
+      if (code >= 95) return '⛈️';
+      return '🌤️';
+    }
+
+    function loadWeather() {
+      const days = document.getElementById('weatherDays');
+      const label = document.getElementById('weatherLabel');
+      label.textContent = 'Lade…';
+
+      const lat = 47.7267;
+      const lon = 10.3139;
+
+      const url =
+        'https://api.open-meteo.com/v1/forecast?latitude=' +
+        lat +
+        '&longitude=' +
+        lon +
+        '&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto';
+
+      fetch(url)
+        .then(r => r.json())
+        .then(data => {
+          const d = data.daily;
+          days.innerHTML = '';
+          for (let i = 0; i < d.time.length && i < 7; i++) {
+            const date = new Date(d.time[i]);
+            const weekday = date.toLocaleDateString('de-DE', { weekday: 'short' });
+            const icon = weatherIconFromCode(d.weathercode[i]);
+            const item = document.createElement('div');
+            item.className = 'weather-day';
+            item.innerHTML =
+              '<strong>' + weekday + '</strong><span>' +
+              icon + ' ' +
+              Math.round(d.temperature_2m_max[i]) + '°C / ' +
+              Math.round(d.temperature_2m_min[i]) + '°C</span>';
+            days.appendChild(item);
+          }
+          label.textContent = 'Wochenwetter';
+          weatherLoaded = true;
+        })
+        .catch(() => {
+          days.innerHTML = '<div class="weather-day">Fehler beim Laden.</div>';
+          label.textContent = 'Wochenwetter';
+        });
+    }
+
+    /* SERVICE TOGGLE */
+    function toggleService(key) {
+      const details = document.getElementById('details-' + key);
+      const toggle = document.getElementById('toggle-' + key);
+      const open = details.style.display === 'block';
+      details.style.display = open ? 'none' : 'block';
+      toggle.textContent = open ? 'Mehr ▾' : 'Weniger ▴';
+    }
+
+    /* QUOTE FORM POPUP */
+    function openQuoteForm() {
+      document.getElementById('quoteFormOverlay').style.display = 'flex';
+    }
+    function closeQuoteForm() {
+      document.getElementById('quoteFormOverlay').style.display = 'none';
+    }
+
+    /* SEND QUOTE VIA EMAIL */
+    function sendQuoteEmail() {
+      const s = document.getElementById('serviceSelect').value;
+      const p = document.getElementById('phoneInput').value;
+      const e = document.getElementById('emailInput').value;
+      const n = document.getElementById('notesInput').value;
+
+      const subject = encodeURIComponent('Angebotsanfrage – ' + s);
+      const body = encodeURIComponent(
+        'Dienstleistung: ' + s +
+        '\nTelefon: ' + p +
+        '\nE-Mail: ' + e +
+        '\nHinweise: ' + n
+      );
+
+      window.location.href =
+        'mailto:alphascleaning21@outlook.com?subject=' + subject + '&body=' + body;
+    }
+
+    /* SEND QUOTE VIA WHATSAPP */
+    function sendQuoteWhatsApp() {
+      const s = document.getElementById('serviceSelect').value;
+      const p = document.getElementById('phoneInput').value;
+      const e = document.getElementById('emailInput').value;
+      const n = document.getElementById('notesInput').value;
+
+      const msg = encodeURIComponent(
+        'Angebotsanfrage:%0A' +
+        'Dienstleistung: ' + s +
+        '%0ATelefon: ' + p +
+        '%0AE-Mail: ' + e +
+        '%0AHinweise: ' + n
+      );
+
+      window.open('https://wa.me/4917682131743?text=' + msg, '_blank');
+    }
+
+    /* YEAR */
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
