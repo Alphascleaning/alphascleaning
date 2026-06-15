@@ -88,10 +88,16 @@ nav a {
     border-radius: 999px;
     transition: background var(--transition-fast), color var(--transition-fast);
 }
-/* FIX NAV SPACING — FINAL OVERRIDE */
+/* FIX NAV SPACING – FINAL OVERRIDE */
 nav ul {
-    gap: 10px; /* reduce spacing between menu items */
+    gap: 10px !important;
 }
+
+nav a {
+    padding: 4px 8px !important;
+    font-size: 0.9rem !important;
+}
+
 
 nav a {
     padding: 4px 8px; /* smaller padding */
