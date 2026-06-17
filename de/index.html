@@ -100,6 +100,17 @@ nav a {
 #header-time {
     font-weight: 300 !important;
 }
+/* WEATHER ICON FIX — MATCH ENGLISH WEBSITE */
+.weather-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.weather-btn .weather-icon {
+    font-size: 1rem;
+    line-height: 1;
+}
 
 
 
@@ -297,7 +308,11 @@ nav a {
     </nav>
 
     <div class="header-right">
-      <button class="weather-btn">Wochenwetter ☀️</button>
+      <button class="weather-btn">
+    <span class="weather-icon" id="weatherIcon">🌤️</span>
+    Wochenwetter
+</button>
+
       <span class="lang">GB DE</span>
       <span id="header-time">07:20</span>
     </div>
