@@ -921,6 +921,16 @@ function toggleWeather() {
     const box = document.getElementById("weatherDropdown");
     box.style.display = box.style.display === "block" ? "none" : "block";
 }
+  <script>
+function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    document.getElementById("header-time").textContent = timeString;
+}
+setInterval(updateTime, 1000);
+updateTime();
+</script>
+
 </script>
 
 </body>
