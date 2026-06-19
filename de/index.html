@@ -839,11 +839,45 @@ function loadWeather() {
                 45: "🌫️",
                 48: "🌫️",
                 51: "🌦️",
-                61: "🌧️",
-                71: "❄️",
-                80: "🌧️",
-                95: "⛈️"
+                71: "🌨️",
+                80: "🌧️"
             };
+
+            let html = "<h3>Wochenwetter</h3>";
+
+            for (let i = 0; i < 5; i++) {
+                const icon = weatherIcons[data.daily.weathercode[i]] || "🌞";
+                html += `
+                    <div class="weather-row">
+                        <span>${days[i]}</span>
+                        <span>${icon}</span>
+                        <span>${data.daily.temperature_2m_max[i]}°C / ${data.daily.temperature_2m_min[i]}°C</span>
+                    </div>`;
+            }
+
+            document.getElementById("weatherDropdown").innerHTML = html;
+        });
+}
+</script>
+
+
+            let html = "<h3>Wochenwetter</h3>";
+
+            for (let i = 0; i < 5; i++) {
+                const icon = weatherIcons[data.daily.weathercode[i]] || "🌞";
+                html += `
+                    <div class="weather-row">
+                        <span>${days[i]}</span>
+                        <span>${icon}</span>
+                        <span>${data.daily.temperature_2m_max[i]}°C / ${data.daily.temperature_2m_min[i]}°C</span>
+                    </div>`;
+            }
+
+            document.getElementById("weatherDropdown").innerHTML = html;
+        });
+}
+</script>
+
 
             let html = "<h3>Wochenwetter</h3>";
 
