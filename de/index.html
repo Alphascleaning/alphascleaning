@@ -836,11 +836,9 @@ function loadWeather() {
                         <span>${days[i]}</span>
                         <span>${icon}</span>
                         <span>${data.daily.temperature_2m_max[i]}°C / ${data.daily.temperature_2m_min[i]}°C</span>
-                    </div>
-                `;
-            }
+</div>`;
+document.getElementById("weatherDropdown").innerHTML = html;
 
-            document.getElementById("weatherDropdown").innerHTML = html;
         });
 }
 </script>
