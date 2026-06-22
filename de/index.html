@@ -294,7 +294,6 @@ nav a {
     gap: 14px;
 }
 
- /* your existing CSS … */
 
 .lang-time-container {
     display: flex;
@@ -305,6 +304,12 @@ nav a {
 
 .lang-time-container .lang {
     cursor: pointer;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px !important;
 }
 
 /* END OF NEW CSS */
@@ -351,11 +356,14 @@ nav a {
     Wochenwetter
 </button>
 
-     <div class="lang-time-container">
-    <span class="lang">GB</span>
-    <span class="lang">DE</span>
-    <span id="header-time"></span>
+    <div class="header-right">
+    <div class="lang-time-container">
+        <div class="lang">GB</div>
+        <div class="lang">DE</div>
+        <div id="header-time"></div>
+    </div>
 </div>
+
 
 
   </div>
