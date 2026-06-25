@@ -606,12 +606,19 @@ section#about {
   .about-grid {
     padding-top: 0 !important;
     margin-top: 0 !important;
+     align-items: flex-start !important; /* THIS IS THE FIX */
 }
 /* FIX HERO PUSHING AGAINST ABOUT SECTION */
 #hero-de {
     padding-bottom: 120px !important;
 }
-
+section#hero-de {
+    padding-bottom: 120px !important;
+}
+    /* FIX LEFT COLUMN PUSHING RIGHT COLUMN DOWN */
+.about-photo-wrapper {
+    padding-top: 0 !important;
+}
 </style>
 
 
