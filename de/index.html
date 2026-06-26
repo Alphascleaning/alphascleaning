@@ -595,15 +595,17 @@ section#about {
 /* MOVE HEADING + TEXT DOWN TOGETHER */
 .about-text {
     position: relative;
-    top: -10px !important; /* adjust this value */
+    top: 0 !important; /* reset — stops moving paragraph */
 }
 
 
 /* MOVE ENTIRE RIGHT COLUMN DOWN */
 
 .about-text h2 {
-    margin-top: 0 !important;
-  margin-bottom: 20px !important; /* keeps space between heading + paragraph */
+  position: relative;
+  top: -30px !important; /* moves ONLY the heading up */
+   margin-bottom: 20px !important; /* keeps space under heading */
+  
 }
 /* FIX PARENT CONTAINER */    
   .about-grid {
