@@ -600,39 +600,45 @@ section#about {
     padding-top: 0 !important; 
 }
 
-
-/* MOVE ENTIRE RIGHT COLUMN DOWN */
-
+/* MOVE HEADING */
 .about-text h2 {
-  position: relative;
-  top: 20px !important; /* moves ONLY the heading up */
-   margin-bottom: 20px !important; /* keeps space under heading */
-  .about-text p,
-.about-text > p,
-.about-text .text p,  
-.about-text .text p {
     position: relative !important;
     top: 20px !important;
-  display: block !important;
+    margin-bottom: 20px !important;
 }
 
-/* FIX PARENT CONTAINER */    
-  .about-grid {
+/* MOVE PARAGRAPH */
+.about-text p,
+.about-text > p,
+.about-text .text p,
+.about-text div p {
+    position: relative !important;
+    top: 20px !important;
+    display: block !important;
+}
+
+/* FIX PARENT CONTAINER */
+.about-grid {
     padding-top: 0 !important;
     margin-top: 0 !important;
-     align-items: flex-start !important; /* THIS IS THE FIX */
+    align-items: flex-start !important;
 }
+
 /* FIX HERO PUSHING AGAINST ABOUT SECTION */
 #hero-de {
     padding-bottom: 120px !important;
 }
+
 section#hero-de {
     padding-bottom: 120px !important;
 }
-    /* FIX LEFT COLUMN PUSHING RIGHT COLUMN DOWN */
+
+/* FIX LEFT COLUMN PUSHING RIGHT COLUMN DOWN */
 .about-photo-wrapper {
     padding-top: 0 !important;
 }
+
+
 </style>
 
 
