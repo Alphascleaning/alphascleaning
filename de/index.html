@@ -684,7 +684,28 @@ margin-bottom: 0 !important;
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
 }
- 
+ .contact-button {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #00a3ff;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-button:hover {
+    background: #0088d1;
+}
+
 
 
 </style>
@@ -1388,6 +1409,12 @@ Zuverlässige, professionelle Reinigung für Wohnungen, Häuser, Büros und gewe
 
     /* YEAR */
     document.getElementById('year').textContent = new Date().getFullYear();
+   /* OPEN POPUP */
+function openContactPopup() {
+    const popup = document.getElementById('contactPopup');
+    if (!popup) return;
+    popup.style.display = 'block';
+} 
   </script>
 <!-- FLOATING CONTACT BUTTON -->
 <div id="contactButton" class="contact-button" onclick="openContactPopup()">
