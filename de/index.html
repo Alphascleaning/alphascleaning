@@ -718,26 +718,32 @@ section:last-of-type {
 
 /* REDUCE SPACING INSIDE WARUM WIR GRID */
 #why .why-grid {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
     row-gap: 5px !important;
-}
-
-/* REDUCE SPACING FOR EACH ITEM */
-#why .why-grid > div {
+    column-gap: 5px !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
 
-/* REDUCE SPACING FOR TEXT INSIDE ITEMS */
+/* REDUCE SPACING FOR EACH GRID ITEM */
+#why .why-grid > div {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* REDUCE SPACING UNDER HEADLINES */
+#why .why-grid h3 {
+    margin-bottom: 4px !important;
+    margin-top: 0 !important;
+}
+
+/* REDUCE SPACING FOR TEXT */
 #why .why-grid p {
     margin-top: 2px !important;
     margin-bottom: 2px !important;
 }
+
 
 </style>
 
