@@ -824,6 +824,50 @@ footer {
     margin-top: 1px !important;
     padding-top: 0 !important;
 }
+/* MATCH ENGLISH WHY CHOOSE US SPACING EXACTLY */
+#why {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* GRID EXACT MATCH */
+#why .why-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* same as English */
+    row-gap: 20px !important;   /* English spacing */
+    column-gap: 20px !important; /* English spacing */
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* EACH BOX */
+#why .why-grid > div {
+    padding: 0 !important;      /* English has NO padding inside boxes */
+    margin: 0 !important;
+}
+
+/* HEADLINES */
+#why .why-grid h3 {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important; /* English spacing */
+    font-size: 18px !important;    /* English headline size */
+    line-height: 1.2 !important;
+}
+
+/* TEXT */
+#why .why-grid p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important; /* English has tight text spacing */
+    font-size: 15px !important;
+    line-height: 1.3 !important;
+}
+
+/* REMOVE EXTRA GAP BELOW WARUM WIR */
+#why {
+    margin-bottom: 10px !important; /* English has a small gap */
+}
 
 
 
