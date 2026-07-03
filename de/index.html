@@ -716,22 +716,27 @@ section:last-of-type {
     margin-bottom: 0 !important;
 }
 
-/* FIX SPACING FOR WARUM WIR SECTION */
-#why {
+/* REDUCE SPACING INSIDE WARUM WIR GRID */
+#why .why-grid {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    row-gap: 5px !important;
+}
+
+/* REDUCE SPACING FOR EACH ITEM */
+#why .why-grid > div {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
 
-#why p {
+/* REDUCE SPACING FOR TEXT INSIDE ITEMS */
+#why .why-grid p {
     margin-top: 2px !important;
     margin-bottom: 2px !important;
-}
-
-#why .col {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
 }
 
 </style>
