@@ -1,13 +1,13 @@
 const CACHE_NAME = "alphas-cleaning-cache-v1";
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/de/index.html",
-  "/en/index.html",
-  "/styles.css",
-  "/script.js",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png"
+  "/alphascleaning/",
+  "/alphascleaning/index.html",
+  "/alphascleaning/de/index.html",
+  "/alphascleaning/en/index.html",
+  "/alphascleaning/styles.css",
+  "/alphascleaning/script.js",
+  "/alphascleaning/icons/icon-192.png",
+  "/alphascleaning/icons/icon-512.png"
 ];
 
 self.addEventListener("install", event => {
