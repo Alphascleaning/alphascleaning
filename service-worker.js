@@ -1,19 +1,36 @@
-const CACHE_NAME = "alphas-cleaning-cache-v1";
+const CACHE_NAME = "alphas-cleaning-cache-v2";
+
 const urlsToCache = [
-  "/alphascleaning/",
-  "/alphascleaning/index.html",
-  "/alphascleaning/de/index.html",
-  "/alphascleaning/icons/icon-192.png",
-  "/alphascleaning/icons/icon-512.png",
-  "/alphascleaning/logo-header.png",
-  "/alphascleaning/favicon.png",
-  "/alphascleaning/about-alpha-photo.jpg"
+  "/",
+  "/index.html",
+  "/de/index.html",
+  "/icons/icon-192.png",
+  "/icons/icon-512.png",
+  "/logo-header.png",
+  "/favicon.png",
+  "/about-alpha-photo.jpg",
+  "/screenshots/desktop.png",
+  "/screenshots/mobile.png"
 ];
 
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(urlsToCache);
+    })
+  );
+});
+
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cache => {
+          if (cache !== CACHE_NAME) {
+            return caches.delete(cache);
+          }
+        })
+      );
     })
   );
 });
