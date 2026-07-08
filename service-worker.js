@@ -1,4 +1,4 @@
-const CACHE_NAME = "alphas-cleaning-cache-v2";
+const CACHE_NAME = "alphas-cleaning-cache-v3";
 
 const urlsToCache = [
   "/",
