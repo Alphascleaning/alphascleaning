@@ -11,6 +11,7 @@ const urlsToCache = [
   "/about-alpha-photo.jpg",
   "/screenshots/desktop.png",
   "/screenshots/mobile.png"
+  "/offline.html"
 ];
 
 self.addEventListener("install", event => {
