@@ -1340,13 +1340,18 @@ nav a {
 
       window.open('https://wa.me/4917682131743?text=' + message, '_blank');
     }
+<!-- YEAR -->
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
-    /* YEAR */
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<!-- LOADER HIDE -->
+<script>
 window.addEventListener("load", () => {
     document.getElementById("loader").style.display = "none";
-  });
+});
 </script>
+
+   
 </body>
 </html>
