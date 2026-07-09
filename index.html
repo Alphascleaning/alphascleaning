@@ -1348,9 +1348,12 @@ document.getElementById('year').textContent = new Date().getFullYear();
 <!-- LOADER HIDE -->
 <script>
 window.addEventListener("load", () => {
-    document.getElementById("loader").style.display = "none";
+    setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+    }, 1200); // 1.2 seconds delay
 });
 </script>
+
 
    
 </body>
