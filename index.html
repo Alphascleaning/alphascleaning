@@ -1344,6 +1344,9 @@ nav a {
     /* YEAR */
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
+window.addEventListener("load", () => {
+    document.getElementById("loader").style.display = "none";
+  });
+</script>
 </body>
 </html>
