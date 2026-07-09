@@ -1342,17 +1342,26 @@ nav a {
     }
 <!-- YEAR -->
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+const loader = document.getElementById("loader");
+const startTime = Date.now();
 
-<!-- LOADER HIDE -->
-<script>
 window.addEventListener("load", () => {
+    const elapsed = Date.now() - startTime;
+    const minTime = 1500; // minimum 1.5 seconds visible
+
+    const remaining = Math.max(0, minTime - elapsed);
+
     setTimeout(() => {
-        document.getElementById("loader").style.display = "none";
-    }, 1200); // 1.2 seconds delay
+        loader.style.transition = "opacity 0.6s ease";
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 600);
+    }, remaining);
 });
 </script>
+
 
 
    
