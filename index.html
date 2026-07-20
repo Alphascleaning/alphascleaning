@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Alphas Cleaning Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="google-site-verification" content="o2lUhyuogpTp3wgBRWzpclKxidv-putdMNbcVY9dGNk" />
+<!-- SEO TAGS GO HERE -->
+<meta name="description" content="Alpha’s Cleaning bietet professionelle Reinigungsservices für Haushalte und Unternehmen in Kempten. Zuverlässig, gründlich und flexibel – Reinigung auf höchstem Niveau."> 
+  <link rel="canonical" href="https://your-domain.com/">
+  <meta name="robots" content="index, follow">
 
-<title>Alphas Cleaning Services – Professional Cleaning in Kempten</title>
-
-<style>
-/* ⭐ PASTE YOUR FULL GERMAN CSS HERE ⭐ */
-     :root {
+<!-- OPEN GRAPH -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alphas Cleaning Services">
+<meta property="og:description" content="Reliable, professional cleaning for apartments, houses, offices, and commercial properties. Book structured, punctual, high-quality cleaning you can depend on.">
+<meta property="og:url" content="https://your-domain.com/">
+<meta property="og:image" content="https://raw.githubusercontent.com/alphascleaning/alphascleaning/main/images/og-image.jpg">
+<meta property="og:site_name" content="Alphas Cleaning Services">
+<meta property="og:locale" content="en_GB">
+  
+  <style>
+    :root {
       --primary: #1E8F6F;
       --bg: #f5f7fa;
       --card-bg: #ffffff;
@@ -36,34 +48,15 @@
       padding: 0 16px;
     }
 
-  section {
-    margin: 40px 0;
-}
-
-section#about {
-    margin-top: 0 !important;
-}
- 
-
-  
-#about {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
+    section {
+      margin: 40px 0;
+    }
 
     .section-intro {
       margin-top: 8px;
       color: var(--text-muted);
       font-size: 0.95rem;
     }
-.section-title {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    text-align: center;
-    color: var(--text-main);
-}
-
     /* HEADER */
     header {
       position: sticky;
@@ -84,25 +77,33 @@ section#about {
     }
 
     .logo img {
-      width: 240px;
+      width: 220px;
       height: auto;
       display: block;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 10px;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
+   nav ul {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* FIX NAV SPACING */
+nav ul {
+    gap: 10px; /* reduce spacing between menu items */
+}
+
+nav a {
+    padding: 4px 8px; /* smaller padding so long words fit better */
+    font-size: 0.9rem; /* slightly smaller text */
+}
+
+    
 
     nav a {
-      padding: 4px 8px;
-      font-size: 0.9rem;
-    }
-
-    nav a {
+      padding: 6px 10px;
       border-radius: 999px;
       transition: background var(--transition-fast), color var(--transition-fast);
     }
@@ -119,7 +120,7 @@ section#about {
     }
 
     /* WEATHER */
-    .weather {
+.weather {
       display: flex;
       align-items: center;
       gap: 6px;
@@ -343,7 +344,7 @@ section#about {
     /* ABOUT + WHY FIXES */
     #about,
     #why {
-      text-align: center;
+      text-align: center; /* headings + intro centered */
     }
 
     .about-grid,
@@ -360,29 +361,83 @@ section#about {
     }
 
     .about-photo-wrapper img {
-    width: 100%;
-    max-width: 380px;
-    height: auto;
-    border-radius: 18px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-}
-
-
-    .about-text,
-    .why-card {
-      max-width: 650px;
-      margin: 0 auto;
-      text-align: left;
+      width: 100%;
+      border-radius: var(--radius-photo);
+      display: block;
     }
 
-    .why-grid {
+    .about-text,
+.why-card {
+    max-width: 650px;   /* reduce line width */
+    margin: 0 auto;     /* center the text block */
+    text-align: left;   /* keep text straight */
+}
+
+       .why-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
     }
+/* HERO SECTION (German) */
+#hero-de {
+    padding: 80px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+/* FIX SPACING BETWEEN HERO AND ABOUT */
+#hero-en {
+    margin-bottom: 20px !important;
+}
+/* MOVE HERO SECTION UPWARDS */
+#hero-en {
+    padding-top: 0 !important;
+}
 
+#hero-de h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+/* FIX ABOUT US TOP SPACING */
+#about {
+    margin-top: -50px !important;
+  padding-top: 0 !important;
+}
+
+#hero-de p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* HERO SECTION (English) */
+#hero-en {
+    padding: 80px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#hero-en h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+#hero-en p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #555;
+}
     .why-card {
       background: var(--card-bg);
       border-radius: var(--radius-card);
@@ -443,12 +498,12 @@ section#about {
     }
 
     .service-emoji {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
 
     .service-toggle {
       font-size: 0.85rem;
-      color: var(--primary);
+      color: var(--text-muted);
     }
 
     .service-short {
@@ -460,932 +515,917 @@ section#about {
     .service-details {
       display: none;
       font-size: 0.9rem;
-      color: var(--text-muted);
     }
 
     .service-details ul {
-      margin-top: 6px;
-      padding-left: 18px;
+      margin-left: 18px;
+      margin-top: 4px;
     }
 
     .service-details li {
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .pricing-name {
-      font-weight: 600;
-      font-size: 1.05rem;
+      font-weight: 700;
       margin-bottom: 4px;
     }
 
     .pricing-price {
-      font-weight: 700;
+      font-size: 1.1rem;
       color: var(--primary);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .pricing-desc {
       font-size: 0.9rem;
       color: var(--text-muted);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .pricing-card ul {
-      padding-left: 18px;
+      margin-left: 18px;
       margin-bottom: 10px;
       font-size: 0.9rem;
     }
 
     .pricing-card li {
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .btn-primary {
       display: inline-block;
-      padding: 8px 12px;
+      padding: 8px 14px;
       border-radius: 999px;
       border: none;
-      cursor: pointer;
       background: var(--primary);
       color: #fff;
-      font-size: 0.9rem;
       font-weight: 600;
-      transition: background var(--transition-fast), transform var(--transition-fast);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
     }
 
-    .btn-primary:hover {
+.btn-primary:hover {
       background: #167459;
-      transform: translateY(-1px);
     }
 
     /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
     @keyframes fadeSlideDown {
       from { opacity: 0; transform: translateY(-6px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+  @media (max-width: 768px) {
+    .clock { display: none; }
+    nav ul { gap: 10px; font-size: 0.85rem; }
+    .about-grid {
+        grid-template-columns: 1fr;
     }
-
-   @keyframes popIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-}
-.about-grid {
-    align-items: start !important;
-}
-
-.about-text {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-#hero-de {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-section#hero-de {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-#hero-de h1 {
-    margin-top: 0 !important;
-}
-
-#hero-de p {
-    margin-top: 10px !important; 
 }
 
 /* FINAL OVERRIDE */
-section#about {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-/* ALIGN HEADING LIKE ENGLISH VERSION */
-
-
-
-
-
-
-/* MOVE IMAGE DOWN */
-.about-photo-wrapper img {
-    margin-top: 20px;
-}
-
 .about-grid {
     align-items: start !important;
 }
 
-.about-photo-wrapper {
-    display: flex;
-    align-items: flex-start;
-    padding-top: 70px; /* picture moves DOWN */
-}
-
-/* MOVE HEADING + TEXT DOWN TOGETHER */
 .about-text {
-    position: relative;
-    top: 0 !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important; 
+    padding-top: 5px !important;
 }
 
-/* MOVE HEADING */
-.about-text h2 {
-    position: relative !important;
-    top: -80px !important;
-    margin-bottom: 20px !important;
-}
-
-/* MOVE PARAGRAPH */
-.about-text p,
-.about-text > p,
-.about-text .text p,
-.about-text div p {
-    position: relative !important;
-    top: -80px !important; /* moves paragraph UP */
+#about h2 {
     display: block !important;
-}
-
-/* FIX PARENT CONTAINER */
-.about-grid {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-    align-items: flex-start !important;
-}
-
-/* FIX HERO PUSHING AGAINST ABOUT SECTION */
-#hero-de {
-    padding-bottom: 120px !important;
-}
-
-section#hero-de {
-    padding-bottom: 120px !important;
-}
-
-/* FIX LEFT COLUMN PUSHING RIGHT COLUMN DOWN */
-.about-photo-wrapper {
-  position: relative !important;
-    top: -117px !important; /* moves picture UP by 117px */
-}
-/* MOVE SERVICES SECTION UP */
-section#services {
-   position: relative !important;
-    top: -111px !important; /* moves section UP */
-}
-section#pricing {
-    position: relative !important;
-    top: -100px !important; /* moves PRICES section UP */
-}
-section#why {
-    position: relative !important;
-    top: -100px !important; /* moves WARUM WIR section UP */
-}
-section#contact {
-    position: relative !important;
-    top: -95px !important; /* moves CONTACT section UP */
-}
-
-footer {    
-margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
- .social-icons {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}   
- .elementor-spacer {
-    display: none !important;
-}
- .elementor-section {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-.elementor-column {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-}
-#contact {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-}    
- #contact p {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-/* FIX FOOTER GAP */
-section:last-of-type {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-} 
-/* TEXT SIZE REDUCTION */
-p {
-    font-size: 15px !important;
-    line-height: 1.3 !important;
-    margin-bottom: 6px !important;
-    margin-top: 6px !important;
-}
-
-/* FIX SECTION SPACING */
-section {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-.container, .row, .col {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-section:last-of-type {
-    margin-bottom: 0 !important;
-}
-
-/* REDUCE SPACING INSIDE WARUM WIR GRID */
-#why .why-grid {
-    row-gap: 5px !important;
-    column-gap: 5px !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-/* REDUCE SPACING FOR EACH GRID ITEM */
-#why .why-grid > div {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-/* REDUCE SPACING UNDER HEADLINES */
-#why .why-grid h3 {
-    margin-bottom: 4px !important;
-    margin-top: 0 !important;
-}
-
-/* REDUCE SPACING FOR TEXT */
-#why .why-grid p {
-    margin-top: 2px !important;
-    margin-bottom: 2px !important;
-}
-/* REMOVE BIG GAP UNDER CONTACT SECTION */
-#contact {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-#contact p:last-of-type {
-    margin-bottom: 0 !important;
-}
-/* STRONG FOOTER SPACING FIX */
-footer,
-.footer,
-.site-footer,
-.footer-wrapper {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-/* REMOVE GAP BELOW CONTACT SECTION */
-#contact {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-#contact p:last-of-type {
-    margin-bottom: 0 !important;
-}
-/* REMOVE GAP BETWEEN CONTACT AND FOOTER */
-main {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-main > section:last-of-type {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-/* REMOVE ALL WRAPPER SPACING ABOVE FOOTER */
-#contact,
-#contact * ,
-section#contact,
-.main,
-main,
-.content,
-.content-wrapper,
-.page-content,
-.section,
-.section:last-of-type,
-.container:last-of-type,
-.row:last-of-type {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-/* MATCH ENGLISH SPACING EXACTLY */
-#contact,
-main > section:last-of-type,
-.section:last-of-type,
-.container:last-of-type,
-.row:last-of-type {
-    margin-bottom: 4px !important;   /* English page uses a small bottom margin */
-    padding-bottom: 0 !important;
-}
-
-footer {
-    margin-top: 4px !important;      /* English page has a tiny gap above footer */
-    padding-top: 0 !important;
-}
-/* CLOSE GAP MORE – ULTRA TIGHT VERSION */
-#contact,
-main > section:last-of-type,
-.section:last-of-type,
-.container:last-of-type,
-.row:last-of-type {
-    margin-bottom: 1px !important;
-    padding-bottom: 0 !important;
-}
-
-footer {
-    margin-top: 1px !important;
-    padding-top: 0 !important;
-}
-/* MATCH ENGLISH WHY CHOOSE US SPACING EXACTLY */
-#why {
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-/* GRID EXACT MATCH */
-#why .why-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important; /* same as English */
-    row-gap: 20px !important;   /* English spacing */
-    column-gap: 20px !important; /* English spacing */
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-/* EACH BOX */
-#why .why-grid > div {
-    padding: 0 !important;      /* English has NO padding inside boxes */
-    margin: 0 !important;
-}
-
-/* HEADLINES */
-#why .why-grid h3 {
-    margin-top: 0 !important;
-    margin-bottom: 8px !important; /* English spacing */
-    font-size: 18px !important;    /* English headline size */
-    line-height: 1.2 !important;
-}
-
-/* TEXT */
-#why .why-grid p {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important; /* English has tight text spacing */
-    font-size: 15px !important;
-    line-height: 1.3 !important;
-}
-
-/* REMOVE EXTRA GAP BELOW WARUM WIR */
-#why {
-    margin-bottom: 10px !important; /* English has a small gap */
-}
-
-/* HARD OVERRIDE – REMOVE ALL BUILDER SPACING */
-#why,
-#why * {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-#warumwir,
-.warumwir,
-.section-warumwir,
-.block-warumwir,
-.page-block,
-.page-section,
-.section,
-.block,
-.container,
-.row {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-/* CENTER WARUM WIR GRID EXACTLY */
-#why .why-grid {
-    max-width: 1100px !important;   /* keeps layout tight like English */
-    margin: 0 auto !important;      /* centers the entire grid */
-    padding-left: 20px !important;  /* shifts boxes inward */
-    padding-right: 20px !important; /* shifts boxes inward */
-}
-/* MOVE KONTAKT DOWN WITHOUT MOVING FOOTER */
-#contact {
-    margin-top: 20px !important;   /* adjust this number as you like */
-}
-/* MATCH ENGLISH BOX HEIGHT + BRIGHTNESS */
-#why .why-grid > div {
-    background: #ffffff !important;      /* same bright white as English */
-    padding: 10px !important;            /* English uses small padding */
-    border-radius: 6px !important;       /* English rounded corners */
-    box-shadow: 0 0 8px rgba(0,0,0,0.08) !important; /* English soft shadow */
-    margin: 0 !important;
-}
-
-/* MATCH ENGLISH TEXT SPACING */
-#why .why-grid h3 {
-    margin-top: 0 !important;
-    margin-bottom: 6px !important;       /* English headline spacing */
-    font-size: 18px !important;
-    line-height: 1.2 !important;
-}
-
-#why .why-grid p {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;         /* English tight text */
-    font-size: 15px !important;
-    line-height: 1.3 !important;
-}
-
-/* MATCH ENGLISH GRID SPACING */
-#why .why-grid {
-    row-gap: 20px !important;            /* English vertical spacing */
-    column-gap: 20px !important;         /* English horizontal spacing */
-    padding: 0 !important;
-    margin: 0 auto !important;
-    max-width: 1100px !important;        /* same width as English */
-}
-/* EXACT ENGLISH BOX STYLE */
-#why .why-card {
-    background: #ffffff !important;
-    padding: 15px !important;            /* English uses small padding */
-    border-radius: 8px !important;       /* English rounded corners */
-    box-shadow: 0 0 10px rgba(0,0,0,0.08) !important; /* English soft shadow */
-    margin: 0 !important;
-    height: auto !important;             /* prevents long boxes */
-}
-
-/* ICON SPACING (English style) */
-#why .why-icon {
     margin-bottom: 10px !important;
+    padding-bottom: 0 !important;
 }
 
-/* TITLE SPACING (English style) */
-#why .why-text-title {
-    font-size: 18px !important;
-    font-weight: 600 !important;
-    margin-bottom: 6px !important;
-    line-height: 1.2 !important;
-}
+</style>
+  
+<link rel="manifest" href="/alphascleaning/manifest.json">
+<meta name="theme-color" content="#1a73e8">
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js");
+  }
+</script>
 
-/* TEXT SPACING (English style) */
-#why .why-text-body {
-    font-size: 15px !important;
-    line-height: 1.3 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-/* CENTER GRID LIKE ENGLISH */
-#why .why-grid {
-    max-width: 1100px !important;
-    margin: 0 auto !important;
-    column-gap: 20px !important;
-    row-gap: 20px !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-}
-/* MOVE KONTAKT DOWN ONLY */
-#contact {
-    margin-top: 25px !important;
-}
-/* MAKE WARUM-WIR BOXES SHORTER */
-#why .why-card {
-    padding: 8px !important;          /* smaller padding = shorter boxes */
-    border-radius: 6px !important;
-    box-shadow: 0 0 8px rgba(0,0,0,0.08) !important;
-    background: #ffffff !important;
-}
+<script>
+  let deferredPrompt;
+  const installButton = document.getElementById("installButton");
 
-/* ICON SPACING — SHORTER */
-#why .why-icon {
-    margin-bottom: 6px !important;    /* reduce icon spacing */
-}
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installButton.style.display = "inline-block";
+  });
 
-/* TITLE — SHORTER */
-#why .why-text-title {
-    margin-bottom: 4px !important;    /* reduce title spacing */
-    font-size: 17px !important;
-    line-height: 1.15 !important;
-}
+  installButton.addEventListener("click", async () => {
+    installButton.style.display = "none";
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      deferredPrompt = null;
+    }
+  });
+</script>
+  
+<style>
+  #loader {
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    display: none !important;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
 
-/* TEXT — SHORTER */
-#why .why-text-body {
-    margin: 0 !important;
-    padding: 0 !important;
-    font-size: 14px !important;       /* slightly smaller text */
-    line-height: 1.25 !important;     /* tighter line height */
-}
-
-/* GRID — SHORTER ROWS */
-#why .why-grid {
-    row-gap: 15px !important;         /* reduce vertical spacing */
-    column-gap: 20px !important;
-    max-width: 1100px !important;
-    margin: 0 auto !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-}
-/* ULTRA SHORT WARUM-WIR BOXES */
-#why .why-card {
-    padding: 4px !important;          /* very small padding */
-    border-radius: 6px !important;
-    box-shadow: 0 0 6px rgba(0,0,0,0.06) !important;
-    background: #ffffff !important;
-}
-
-/* ICON — VERY TIGHT */
-#why .why-icon {
-    margin-bottom: 4px !important;
-    width: 32px !important;
-    height: 32px !important;
-}
-
-/* TITLE — VERY TIGHT */
-#why .why-text-title {
-    margin-bottom: 3px !important;
-    font-size: 16px !important;
-    line-height: 1.1 !important;      /* tight line height */
-}
-
-/* TEXT — VERY TIGHT */
-#why .why-text-body {
-    margin: 0 !important;
-    padding: 0 !important;
-    font-size: 13px !important;       /* smaller text */
-    line-height: 1.2 !important;      /* tighter text */
-}
-
-/* GRID — SMALLER ROW GAP */
-#why .why-grid {
-    row-gap: 10px !important;         /* smallest safe spacing */
-    column-gap: 18px !important;
-    max-width: 1100px !important;
-    margin: 0 auto !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-}
-/* PIXEL PERFECT MATCH TO ENGLISH BOXES */
-
-/* CARD BOX */
-#why .why-card {
-    background: #ffffff !important;
-    padding: 12px !important;               /* exact English padding */
-    border-radius: 8px !important;          /* exact English radius */
-    box-shadow: 0 0 10px rgba(0,0,0,0.08) !important; /* exact English shadow */
-    margin: 0 !important;
-    height: auto !important;                /* prevents tall boxes */
-}
-
-/* ICON */
-#why .why-icon {
-    margin-bottom: 8px !important;          /* English spacing */
-    width: 40px !important;                 /* English icon size */
-    height: 40px !important;
-}
-
-/* TITLE */
-#why .why-text-title {
-    font-size: 18px !important;             /* English font size */
-    font-weight: 600 !important;
-    margin-bottom: 6px !important;          /* English spacing */
-    line-height: 1.2 !important;            /* English line height */
-}
-
-/* TEXT */
-#why .why-text-body {
-    font-size: 15px !important;             /* English font size */
-    line-height: 1.3 !important;            /* English line height */
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* GRID */
-#why .why-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important; /* English layout */
-    column-gap: 20px !important;            /* English spacing */
-    row-gap: 20px !important;               /* English spacing */
-    max-width: 1100px !important;           /* English width */
-    margin: 0 auto !important;              /* center grid */
-    padding-left: 20px !important;          /* English side spacing */
-    padding-right: 20px !important;
-}
-
-/* EVEN SHORTER WARUM-WIR BOXES */
-#why .why-card {
-    padding: 6px !important;                 /* smaller padding */
-    border-radius: 6px !important;
-    box-shadow: 0 0 6px rgba(0,0,0,0.06) !important;
-    background: #ffffff !important;
-}
-
-/* ICON — SMALLER & TIGHTER */
-#why .why-icon {
-    margin-bottom: 4px !important;
-    width: 32px !important;
-    height: 32px !important;
-}
-
-/* TITLE — SMALLER & TIGHTER */
-#why .why-text-title {
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    margin-bottom: 3px !important;
-    line-height: 1.1 !important;
-}
-
-/* TEXT — SMALLER & TIGHTER */
-#why .why-text-body {
-    font-size: 13px !important;
-    line-height: 1.2 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* GRID — REDUCE ROW HEIGHT */
-#why .why-grid {
-    row-gap: 12px !important;                /* tighter vertical spacing */
-    column-gap: 18px !important;
-    max-width: 1100px !important;
-    margin: 0 auto !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-}
-/* Smaller DE | GB language buttons */
-.lang-flags a {
-    font-size: 12px !important;      /* smaller text */
-    padding: 2px 6px !important;     /* tighter padding */
-    border-radius: 4px !important;   /* softer corners */
-    color: #444 !important;          /* softer color */
-    opacity: 0.8 !important;         /* slightly faded */
-  font-weight: bold !important;    /* MAKE IT BOLD */
-}
-
-/* Reduce spacing between DE and GB */
-.lang-flags {
-    gap: 6px !important;             /* smaller gap */
-}
-
-/* Optional: subtle hover effect */
-.lang-flags a:hover {
-    opacity: 1 !important;
-    color: #000 !important;
-}
-#hero-de {
-    padding: 80px 20px;
-    text-align: center;
+  .loader-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
+  }
 
-#hero-de h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    line-height: 1.2;
-}
+  .loader-logo {
+    width: 120px;
+    margin-bottom: 20px;
+    animation: fadePulse 1.8s ease-in-out infinite;
+  }
 
-#hero-de p {
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-    color: #555;
-}
+  @keyframes fadePulse {
+    0% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.6; transform: scale(1); }
+  }
 
-</style>
+  .dots span {
+    width: 14px;
+    height: 14px;
+    margin: 0 6px;
+    background: #3498db;
+    border-radius: 50%;
+    display: inline-block;
+    animation: bounce 0.6s infinite alternate;
+  }
 
+  .dots span:nth-child(2) { animation-delay: 0.2s; }
+  .dots span:nth-child(3) { animation-delay: 0.4s; }
 
-</style>
-
-<!-- SEO: English is the canonical page -->
-<link rel="canonical" href="https://alphascleaning.de/en/index.html">
-<link rel="alternate" hreflang="de" href="https://alphascleaning.de/index.html">
-<link rel="alternate" hreflang="en" href="https://alphascleaning.de/en/index.html">
-<link rel="alternate" hreflang="x-default" href="https://alphascleaning.de/index.html">
-
-<link rel="manifest" href="/alphascleaning/manifest.json">
-<meta name="theme-color" content="#1a73e8">
-
-<script>
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/alphascleaning/service-worker.js");
-}
-</script>
-
+  @keyframes bounce {
+    to { transform: translateY(-14px); }
+  }
+  </style>
 </head>
+
 <body>
-
-<header>
-  <div class="header-inner">
-    <div class="logo">
-      <a href="/en/index.html"><img src="/alphascleaning/logo.png" alt="Alphas Cleaning"></a>
-    </div>
-
-    <nav>
-      <ul>
-        <li><a href="#hero-de">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#why">Why Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="header-right">
-      <div class="lang-flags">
-        <a href="/index.html">DE</a>
-        <a href="/en/index.html">EN</a>
-      </div>
-      <div class="clock" id="clock"></div>
+ <div id="loader">
+<div class="loader-content">
+    <img src="logo-header.png" alt="Logo" class="loader-logo">
+    <div class="dots">
+      <span></span><span></span><span></span>
     </div>
   </div>
-</header>
+</div> 
 
-<main>
+  <!-- HEADER -->
+  <header id="top">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="#home">
+          <img src="logo-header.png" alt="Alphas Cleaning Logo">
+        </a>
+      </div>
+<button id="installButton" style="
+  padding: 10px 20px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+">
+  Install App
+</button>
 
-<section id="hero-de">
-  <h1>Professional Cleaning Services in Kempten</h1>
-  <p>Reliable, structured, and high‑quality cleaning for apartments, houses, offices, and commercial properties.</p>
+  <nav>
+  <ul>
+    <li><a href="/en/index.html">Home</a></li>
+    <li><a href="/en/about/">About Us</a></li>
+    <li><a href="/en/services/">Services</a></li>
+    <li><a href="/en/pricing/">Pricing</a></li>
+    <li><a href="/en/why-us/">Why Choose Us</a></li>
+    <li><a href="/faq/">FAQ</a></li>
+    <li><a href="javascript:void(0)" onclick="openContactPopup()">Contact</a></li>
+  </ul>
+</nav>
+    
+
+      <div class="header-right">
+        <div class="weather" onclick="toggleWeather()">
+          <span class="weather-icon" id="weatherIcon">🌤️</span>
+          <span id="weatherLabel">Weekly weather</span>
+        </div>
+
+        <div class="lang-flags">
+          <a href="index.html" title="English">🇬🇧</a>
+          <a href="de/index.html" title="Deutsch">🇩🇪</a>
+        </div>
+
+        <div id="clock" class="clock"></div>
+      </div>
+    </div>
+
+    <div id="weatherDropdown" class="weather-dropdown">
+      <div class="weather-panel">
+        <h3>Weekly Weather Forecast</h3>
+        <div id="weatherDays" class="weather-days">
+          <div class="weather-day">Loading forecast…</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HOME -->
+   <section id="hero-en">
+  <h1>Alphas Cleaning Services</h1>
+  <p class="section-intro">
+    Reliable, professional cleaning for apartments, houses, offices, and commercial properties.
+    We combine modern equipment, trained staff, and clear communication to keep your spaces spotless.
+  </p>
 </section>
 
-<section id="about">
-  <h2 class="section-title">About Alphas Cleaning</h2>
-  <p class="section-intro">Professional cleaning with structure, reliability, and clear communication.</p>
 
-  <div class="about-grid">
-    <div class="about-photo-wrapper">
-      <img src="/alphascleaning/about.jpg" alt="Cleaning Team">
+    <!-- ABOUT US -->
+    <section id="about">
+      <h2>About Us</h2>
+
+      <div class="about-grid">
+        <div class="about-photo-wrapper">
+          <img src="about-alpha-photo.jpg" alt="Alpha – Founder of Alphas Cleaning">
+        </div>
+
+        <div class="about-text">
+          <p>
+            My name is Alpha, and I founded Alphas Cleaning with one clear goal:
+            to deliver reliable, high-quality cleaning services that clients can truly depend on.
+          </p>
+
+          <p>
+            With a background in warehouse and logistics management, I bring structure,
+            discipline, and efficiency into every project. Whether it’s a private home,
+            an office, or a commercial building, we treat every property with the same care
+            and attention to detail.
+          </p>
+
+          <p>
+            We believe in clear communication, punctuality, and consistent results.
+            When you book with us, you know exactly what to expect — no surprises, just clean spaces.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>Our Services</h2>
+
+      <p class="section-intro">
+        From regular maintenance cleaning to specialised services, we offer a complete range of solutions
+        for residential and commercial properties.
+      </p>
+
+      <div class="services-grid">
+
+        <!-- APARTMENT CLEANING -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('apt')">
+            <div class="service-title">
+              <span class="service-emoji">🏢</span>
+              <span>Apartment Cleaning</span>
+            </div>
+            <div class="service-toggle" id="toggle-apt">More ▾</div>
+          </div>
+
+          <div class="service-short">
+            Regular and one-time cleaning for apartments of all sizes.
+          </div>
+
+          <div class="service-details" id="details-apt">
+            <p>Ideal for tenants, landlords, and property managers who want a consistently clean apartment.</p>
+            <ul>
+              <li>Dusting, vacuuming, and mopping of all rooms</li>
+              <li>Bathroom and kitchen deep cleaning</li>
+              <li>Surface disinfection and waste removal</li>
+              <li>Move-in / move-out cleaning on request</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- HOUSE CLEANING -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('house')">
+            <div class="service-title">
+              <span class="service-emoji">🏠</span>
+              <span>House Cleaning</span>
+            </div>
+            <div class="service-toggle" id="toggle-house">More ▾</div>
+          </div>
+
+          <div class="service-short">
+            Complete cleaning for family homes and residential houses.
+          </div>
+
+          <div class="service-details" id="details-house">
+            <p>Perfect for busy households that need a reliable cleaning partner.</p>
+            <ul>
+              <li>Weekly, bi-weekly, or monthly cleaning</li>
+              <li>Detailed bathroom and kitchen care</li>
+              <li>Floor care for tiles, laminate, and more</li>
+              <li>Optional deep cleaning and spring cleaning</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- OFFICE CLEANING -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('office')">
+            <div class="service-title">
+              <span class="service-emoji">💼</span>
+              <span>Office Cleaning</span>
+            </div>
+            <div class="service-toggle" id="toggle-office">More ▾</div>
+          </div>
+
+          <div class="service-short">
+            Professional cleaning for offices and workspaces.
+          </div>
+
+          <div class="service-details" id="details-office">
+            <p>We keep your office clean, presentable, and hygienic for staff and visitors.</p>
+            <ul>
+              <li>Desk, surface, and meeting room cleaning</li>
+              <li>Sanitising of high-touch areas</li>
+              <li>Waste removal and washroom cleaning</li>
+              <li>Flexible schedules outside business hours</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MAINTENANCE CLEANING -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('maint')">
+            <div class="service-title">
+              <span class="service-emoji">🧹</span>
+              <span>Maintenance Cleaning</span>
+            </div>
+            <div class="service-toggle" id="toggle-maint">More ▾</div>
+          </div>
+
+          <div class="service-short">
+            Ongoing cleaning for offices, clinics, and commercial spaces.
+          </div>
+
+          <div class="service-details" id="details-maint">
+            <p>Structured, regular cleaning to keep your property consistently clean.</p>
+            <ul>
+              <li>Daily, weekly, or custom cleaning intervals</li>
+              <li>Dusting, vacuuming, and floor care</li>
+              <li>Sanitising of shared areas and facilities</li>
+              <li>Tailoured cleaning plans for your property</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- WINDOW CLEANING -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('window')">
+            <div class="service-title">
+              <span class="service-emoji">🪟</span>
+              <span>Glass & Window Cleaning</span>
+            </div>
+            <div class="service-toggle" id="toggle-window">More ▾</div>
+          </div>
+
+          <div class="service-short">
+            Streak-free cleaning for windows, glass doors, and facades.
+          </div>
+
+          <div class="service-details" id="details-window">
+            <p>We ensure clear views and a professional appearance from inside and outside.</p>
+            <ul>
+              <li>Interior and exterior window cleaning</li>
+              <li>Glass doors, partitions, and shopfronts</li>
+              <li>Use of professional tools and products</li>
+              <li>Flexible scheduling to minimise disruption</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CARETAKER -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('caretaker')">
+            <div class="service-title">
+              <span class="service-emoji">🛠️</span>
+              <span>Caretaker Services</span>
+            </div>
+            <div class="service-toggle" id="toggle-caretaker">More ▾</div>
+          </div>
+
+          <div class="service-short">
+            Ongoing support for buildings, facilities, and shared properties.
+          </div>
+
+          <div class="service-details" id="details-caretaker">
+            <p>We act as your reliable partner for building care and small tasks.</p>
+            <ul>
+              <li>Monitoring of common areas and entrances</li>
+              <li>Minor repairs and coordination with trades</li>
+              <li>Supervision of cleaning and maintenance tasks</li>
+              <li>Reporting of issues and irregularities</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- WINTER SERVICE -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('winter')">
+            <div class="service-title">
+              <span class="service-emoji">❄️</span>
+              <span>Winter Service</span>
+            </div>
+            <div class="service-toggle" id="toggle-winter">More ▾</div>
+          </div>
+
+          <div class="service-short">
+            Safe access in winter through snow removal and gritting.
+          </div>
+
+          <div class="service-details" id="details-winter">
+            <p>We help keep paths, entrances, and parking areas safe during winter.</p>
+            <ul>
+              <li>Snow clearing for walkways and entrances</li>
+              <li>Gritting and de-icing of critical areas</li>
+              <li>Flexible response during snowfall</li>
+              <li>Ideal for residential and commercial properties</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- STAIRWELL CLEANING -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('stair')">
+            <div class="service-title">
+              <span class="service-emoji">🪜</span>
+              <span>Stairwell Cleaning</span>
+            </div>
+            <div class="service-toggle" id="toggle-stair">More ▾</div>
+          </div>
+
+          <div class="service-short">
+            Professional cleaning for stairwells in residential and commercial buildings.
+          </div>
+
+          <div class="service-details" id="details-stair">
+            <p>We keep stairwells clean, safe, and welcoming for residents and visitors.</p>
+            <ul>
+              <li>Sweeping and mopping of all stair levels</li>
+              <li>Cleaning of handrails, walls, and corners</li>
+              <li>Removal of dust, cobwebs, and debris</li>
+              <li>Ideal for apartment buildings and shared properties</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CONSTRUCTION CLEANING -->
+        <div class="service-card">
+          <div class="service-header" onclick="toggleService('construction')">
+            <div class="service-title">
+              <span class="service-emoji">🚧</span>
+              <span>Construction Cleaning</span>
+            </div>
+            <div class="service-toggle" id="toggle-construction">More ▾</div>
+          </div>
+
+          <div class="service-short">
+            Cleaning after renovation, construction, or refurbishment work.
+          </div>
+
+          <div class="service-details" id="details-construction">
+            <p>We prepare your property for handover or move-in after construction work.</p>
+            <ul>
+              <li>Removal of dust, debris, and construction residues</li>
+              <li>Cleaning of floors, windows, and surfaces</li>
+              <li>Final cleaning before handover or opening</li>
+              <li>Flexible scheduling with contractors and trades</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <h2>Pricing</h2>
+      <p class="section-intro">
+        Every property is different. Our pricing is transparent and fair, with clear packages and the option
+        for custom quotes.
+      </p>
+
+      <div class="pricing-grid">
+
+        <!-- BASIC -->
+        <div class="pricing-card">
+          <div class="pricing-name">Basic</div>
+          <div class="pricing-price">from €35</div>
+          <div class="pricing-desc">Ideal for small apartments or light cleaning needs.</div>
+          <ul>
+            <li>Basic surface and floor cleaning</li>
+            <li>Bathroom and kitchen refresh</li>
+            <li>Flexible one-time or recurring</li>
+          </ul>
+          <button class="btn-primary" onclick="openQuoteForm()">Request Quote</button>
+        </div>
+
+        <!-- STANDARD -->
+        <div class="pricing-card">
+          <div class="pricing-name">Standard</div>
+          <div class="pricing-price">from €45</div>
+          <div class="pricing-desc">Perfect for houses and medium-sized offices.</div>
+          <ul>
+            <li>Full home or office cleaning</li>
+            <li>Detailed bathroom and kitchen care</li>
+            <li>Regular cleaning schedules available</li>
+          </ul>
+          <button class="btn-primary" onclick="openQuoteForm()">Request Quote</button>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="pricing-card">
+          <div class="pricing-name">Premium</div>
+          <div class="pricing-price">from €55</div>
+          <div class="pricing-desc">For large properties or deep cleaning projects.</div>
+          <ul>
+            <li>Extended deep cleaning</li>
+            <li>Custom checklist for your property</li>
+            <li>Ideal for move-in / move-out or handover</li>
+          </ul>
+          <button class="btn-primary" onclick="openQuoteForm()">Request Quote</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ⭐ QUOTE FORM POPUP -->
+    <div id="quoteFormOverlay">
+      <div id="quoteForm">
+        <h3>Request a Quote</h3>
+
+        <label for="serviceSelect">Select Service</label>
+        <select id="serviceSelect">
+          <option value="Apartment Cleaning">Apartment Cleaning</option>
+          <option value="House Cleaning">House Cleaning</option>
+          <option value="Office Cleaning">Office Cleaning</option>
+          <option value="Maintenance Cleaning">Maintenance Cleaning</option>
+          <option value="Stairwell Cleaning">Stairwell Cleaning</option>
+          <option value="Construction Cleaning">Construction Cleaning</option>
+          <option value="Caretaker Service">Caretaker Service</option>
+          <option value="Winter Service">Winter Service</option>
+        </select>
+
+        <label for="phoneInput">Phone Number</label>
+        <input type="text" id="phoneInput" placeholder="Your phone number">
+
+        <label for="emailInput">Email Address</label>
+        <input type="email" id="emailInput" placeholder="Your email address">
+
+        <label for="notesInput">Additional Notes</label>
+        <textarea id="notesInput" placeholder="Tell us anything important…"></textarea>
+
+        <div class="quote-buttons">
+          <button class="quote-btn" onclick="sendQuoteEmail()">Email</button>
+          <button class="quote-btn" onclick="sendQuoteWhatsApp()">WhatsApp</button>
+        </div>
+
+        <div class="quote-close" onclick="closeQuoteForm()">Close</div>
+      </div>
     </div>
 
-    <div class="about-text">
-      <p>Alphas Cleaning provides reliable and structured cleaning services for private and commercial clients. Our goal is to deliver the highest quality and customer satisfaction.</p>
-      <p>Whether regular maintenance cleaning, deep cleaning, or specialized services — we work according to your needs.</p>
-      <p>You receive a dedicated contact person, clear agreements, and cleaning you can rely on.</p>
+    <!-- WHY CHOOSE US -->
+    <section id="why">
+      <h2>Why Choose Us</h2>
+      <p class="section-intro">
+        We focus on reliability, quality, and clear communication — so you always know your property is in good hands.
+      </p>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <div class="why-icon">⭐</div>
+          <div>
+            <div class="why-text-title">Highly Trained Staff</div>
+            <div class="why-text-body">
+              Our team is trained, experienced, and follows clear checklists for consistent results.
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">🧽</div>
+          <div>
+            <div class="why-text-title">Professional Equipment</div>
+            <div class="why-text-body">
+              We use modern tools and cleaning products suitable for different surfaces and environments.
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">⏱️</div>
+          <div>
+            <div class="why-text-title">Always On Time</div>
+            <div class="why-text-body">
+              Punctuality and reliability are part of our promise — your time is valuable.
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">💬</div>
+          <div>
+            <div class="why-text-title">Clear Communication</div>
+            <div class="why-text-body">
+              We keep communication simple and transparent, so expectations are always clear.
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">🔒</div>
+          <div>
+            <div class="why-text-title">Trusted & Insured</div>
+            <div class="why-text-body">
+              You can trust us with your property — we work carefully and responsibly.
+            </div>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">🌍</div>
+          <div>
+            <div class="why-text-title">Eco-Friendly Options</div>
+            <div class="why-text-body">
+              On request, we use environmentally friendly products for a greener clean.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="section-intro">
+        Ready to book a cleaning or request a custom quote? Get in touch and we’ll respond as soon as possible.
+      </p>
+
+      <p style="font-size:0.95rem; color:var(--text-muted);">
+        Email: <strong>alphascleaning21@outlook.com</strong><br>
+        Phone: <strong>+49 176 82131743</strong><br>
+        Location: Kempten (Allgäu), Germany
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="text-align:center; width:100%;">
+    &copy; <span id="year"></span> Alphas Cleaning Services. All rights reserved.
+
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=100093013924902" target="_blank" title="Facebook">👍</a>
+      <a href="https://www.my-hammer.de/auftragnehmer/alpha-kamara" target="_blank" title="MyHammer">🔨</a>
+      <a href="https://maps.app.goo.gl/h6kQ9gVy4QiSfsbbA" target="_blank" title="Google Maps">🗺️</a>
+      <a href="#" title="Instagram (coming soon)">📸</a>
     </div>
+  </footer>
+
+  <!-- CONTACT POPUP -->
+  <div id="contactPopup" class="contact-popup">
+    <div class="popup-header">Contact Us</div>
+
+    <div class="popup-icons">
+      <a href="https://wa.me/4917682131743" target="_blank" class="popup-icon">💬</a>
+      <a href="mailto:alphascleaning21@outlook.com" class="popup-icon">📧</a>
+    </div>
+
+    <div class="popup-close" onclick="closeContactPopup()">✖</div>
   </div>
-</section>
 
-<section id="services">
-  <h2 class="section-title">Our Services</h2>
-  <p class="section-intro">Complete cleaning solutions for private and commercial properties.</p>
+  <!-- SCRIPTS -->
+  <script>
+    /* CLOCK */
+    function updateClock() {
+      const clockEl = document.getElementById('clock');
+      if (!clockEl) return;
 
-  <div class="services-grid">
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
 
-    <div class="service-card">
-      <div class="service-header">
-        <div class="service-title"><span class="service-emoji">🏠</span> Apartment Cleaning</div>
-      </div>
-      <p class="service-short">Regular and one‑time cleaning for apartments of any size.</p>
-    </div>
+      clockEl.textContent = h + ':' + m;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+    /* CONTACT POPUP */
+    function openContactPopup() {
+      document.getElementById('contactPopup').style.display = 'block';
+    }
+    function closeContactPopup() {
+      document.getElementById('contactPopup').style.display = 'none';
+    }
 
-    <div class="service-card">
-      <div class="service-header">
-        <div class="service-title"><span class="service-emoji">🏡</span> House Cleaning</div>
-      </div>
-      <p class="service-short">Complete cleaning for single‑family homes and residential houses.</p>
-    </div>
+    /* WEATHER */
+    let weatherOpen = false;
+    let weatherLoaded = false;
 
-    <div class="service-card">
-      <div class="service-header">
-        <div class="service-title"><span class="service-emoji">💼</span> Office Cleaning</div>
-      </div>
-      <p class="service-short">Professional cleaning for offices and workspaces.</p>
-    </div>
+    function toggleWeather() {
+      const dropdown = document.getElementById('weatherDropdown');
+      weatherOpen = !weatherOpen;
+      dropdown.style.display = weatherOpen ? 'block' : 'none';
 
-    <div class="service-card">
-      <div class="service-header">
-        <div class="service-title"><span class="service-emoji">🧽</span> Maintenance Cleaning</div>
-      </div>
-      <p class="service-short">Ongoing cleaning for offices, clinics, and commercial spaces.</p>
-    </div>
+      if (weatherOpen && !weatherLoaded) {
+        loadWeather();
+      }
+    }
 
-    <div class="service-card">
-      <div class="service-header">
-        <div class="service-title"><span class="service-emoji">🪟</span> Window Cleaning</div>
-      </div>
-      <p class="service-short">Streak‑free cleaning of windows, glass doors, and facades.</p>
-    </div>
+    function weatherIconFromCode(code) {
+      if (code === 0) return '☀️';
+      if (code === 1 || code === 2) return '🌤️';
+      if (code === 3) return '☁️';
+      if (code >= 45 && code <= 48) return '🌫️';
+      if (code >= 51 && code <= 67) return '🌦️';
+      if (code >= 71 && code <= 77) return '❄️';
+      if (code >= 80 && code <= 82) return '🌧️';
+      if (code >= 95) return '⛈️';
+      return '🌤️';
+    }
 
-    <div class="service-card">
-      <div class="service-header">
-        <div class="service-title"><span class="service-emoji">🔧</span> Caretaker Services</div>
-      </div>
-      <p class="service-short">Ongoing support for buildings, facilities, and common areas.</p>
-    </div>
+    function loadWeather() {
+      const daysContainer = document.getElementById('weatherDays');
+      const label = document.getElementById('weatherLabel');
 
-  </div>
-</section>
+      label.textContent = 'Loading…';
 
-<section id="pricing">
-  <h2 class="section-title">Pricing</h2>
-  <p class="section-intro">Transparent and fair prices for every cleaning need.</p>
+      const lat = 47.7267;
+      const lon = 10.3139;
 
-  <div class="pricing-grid">
+      const url =
+        'https://api.open-meteo.com/v1/forecast?latitude=' +
+        lat +
+        '&longitude=' +
+        lon +
+        '&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto';
 
-    <div class="pricing-card">
-      <div class="pricing-name">Basic</div>
-      <div class="pricing-price">from €35</div>
-      <p class="pricing-desc">Ideal for small apartments or light cleaning tasks.</p>
-    </div>
+      fetch(url)
+        .then(r => r.json())
+        .then(data => {
+          const daily = data.daily;
+          const dates = daily.time;
+          const codes = daily.weathercode;
+          const tmax = daily.temperature_2m_max;
+          const tmin = daily.temperature_2m_min;
 
-    <div class="pricing-card">
-      <div class="pricing-name">Standard</div>
-      <div class="pricing-price">from €45</div>
-      <p class="pricing-desc">Perfect for houses and medium‑sized offices.</p>
-    </div>
+          daysContainer.innerHTML = '';
 
-    <div class="pricing-card">
-      <div class="pricing-name">Premium</div>
-      <div class="pricing-price">from €55</div>
-      <p class="pricing-desc">For large properties or intensive cleaning projects.</p>
-    </div>
+          for (let i = 0; i < dates.length && i < 7; i++) {
+            const d = new Date(dates[i]);
+            const weekday = d.toLocaleDateString(undefined, { weekday: 'short' });
+            const icon = weatherIconFromCode(codes[i]);
 
-  </div>
-</section>
+            const item = document.createElement('div');
+            item.className = 'weather-day';
+            item.innerHTML =
+              '<strong>' +
+              weekday +
+              '</strong><span>' +
+              icon +
+              ' ' +
+              Math.round(tmax[i]) +
+              '°C / ' +
+              Math.round(tmin[i]) +
+              '°C</span>';
 
-<section id="why">
-  <h2 class="section-title">Why Choose Us</h2>
-  <p class="section-intro">Quality, reliability, and professionalism.</p>
+            daysContainer.appendChild(item);
+          }
 
-  <div class="why-grid">
+          label.textContent = 'Weekly weather';
+          weatherLoaded = true;
+        })
+        .catch(() => {
+          daysContainer.innerHTML =
+            '<div class="weather-day">Unable to load weather data.</div>';
+          label.textContent = 'Weekly weather';
+        });
+    }
 
-    <div class="why-card">
-      <div class="why-icon">⭐</div>
-      <div>
-        <div class="why-text-title">Highly Qualified Staff</div>
-        <div class="why-text-body">Trained and experienced team with clear checklists.</div>
-      </div>
-    </div>
+    /* SERVICE TOGGLE */
+    function toggleService(key) {
+      const details = document.getElementById('details-' + key);
+      const toggle = document.getElementById('toggle-' + key);
+      if (!details || !toggle) return;
 
-    <div class="why-card">
-      <div class="why-icon">⚙️</div>
-      <div>
-        <div class="why-text-title">Professional Equipment</div>
-        <div class="why-text-body">Modern tools and suitable cleaning agents.</div>
-      </div>
-    </div>
+      const isOpen = details.style.display === 'block';
+      details.style.display = isOpen ? 'none' : 'block';
+      toggle.textContent = isOpen ? 'More ▾' : 'Less ▴';
+    }
 
-    <div class="why-card">
-      <div class="why-icon">⏱️</div>
-      <div>
-        <div class="why-text-title">Punctual & Reliable</div>
-        <div class="why-text-body">Your time is valuable — we respect it.</div>
-      </div>
-    </div>
+    /* QUOTE FORM POPUP */
+    function openQuoteForm() {
+      document.getElementById('quoteFormOverlay').style.display = 'flex';
+    }
 
-  </div>
-</section>
+    function closeQuoteForm() {
+      document.getElementById('quoteFormOverlay').style.display = 'none';
+    }
 
-<section id="contact">
-  <h2 class="section-title">Contact</h2>
-  <p class="section-intro">Get in touch with us.</p>
+    /* SEND QUOTE VIA EMAIL */
+    function sendQuoteEmail() {
+      const service = document.getElementById('serviceSelect').value;
+      const phone = document.getElementById('phoneInput').value;
+      const email = document.getElementById('emailInput').value;
+      const notes = document.getElementById('notesInput').value;
 
-  <p>Email: alphascleaning21@outlook.com</p>
-  <p>Phone: +49 176 82131743</p>
-  <p>Location: Kempten (Allgäu), Germany</p>
-</section>
+      const subject = encodeURIComponent('Quote Request – ' + service);
+      const body = encodeURIComponent(
+        'Service: ' +
+          service +
+          '\nPhone: ' +
+          phone +
+          '\nEmail: ' +
+          email +
+          '\nNotes: ' +
+          notes
+      );
 
-</main>
+      window.location.href =
+        'mailto:alphascleaning21@outlook.com?subject=' + subject + '&body=' + body;
+    }
 
-<footer>
-  <div class="social-icons">
-    <a href="#">📘</a>
-    <a href="#">📸</a>
-    <a href="#">💼</a>
-  </div>
-</footer>
+    /* SEND QUOTE VIA WHATSAPP */
+    function sendQuoteWhatsApp() {
+      const service = document.getElementById('serviceSelect').value;
+      const phone = document.getElementById('phoneInput').value;
+      const email = document.getElementById('emailInput').value;
+      const notes = document.getElementById('notesInput').value;
 
+      const message = encodeURIComponent(
+        'Quote Request:%0A' +
+          'Service: ' +
+          service +
+          '%0APhone: ' +
+          phone +
+          '%0AEmail: ' +
+          email +
+          '%0ANotes: ' +
+          notes
+      );
+
+      window.open('https://wa.me/4917682131743?text=' + message, '_blank');
+    }
+<!-- YEAR -->
+<script>
+const loader = document.getElementById("loader");
+const startTime = Date.now();
+
+
+
+
+
+
+
+   
 </body>
 </html>
+
+
